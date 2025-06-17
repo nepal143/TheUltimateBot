@@ -1,0 +1,16 @@
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+*.log
+
+# Ignore virtual environments
+env/
+venv/
+
+# Ignore API keys and sensitive info
+.env
+
+# Ignore assets if not needed
+assets/scripts/*.txt
+assets/audio/*.mp3
+assets/video/*.mp4
