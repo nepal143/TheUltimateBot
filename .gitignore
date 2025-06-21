@@ -1,16 +1,20 @@
-# Ignore Python cache
+# 🐍 Python bytecode and logs
 __pycache__/
 *.py[cod]
 *.log
 
-# Ignore virtual environments
+# 📦 Virtual environments
 env/
 venv/
+.venv/
 
-# Ignore API keys and sensitive info
+# 🔐 API keys and sensitive files
 .env
 
-# Ignore assets if not needed
-assets/scripts/*.txt
-assets/audio/*.mp3
-assets/video/*.mp4
+# 📂 Block all generated scripts and media
+assets/scripts/
+assets/audio/
+assets/video/
+
+# 🔒 Ensure ALL .mp4 files are ignored globally
+.mp4

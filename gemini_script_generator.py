@@ -11,16 +11,16 @@ client = OpenAI(
 
 def generate_youtube_script(topic):
     prompt = (
-        f"Write a highly engaging YouTube script about: '{topic}'. "
-        "The script should be 60 to 90 seconds long, written in a casual and energetic tone. "
-        "Start with a strong hook to grab attention, then explain the topic in simple, digestible parts. "
-        "Wrap it up with a clever or satisfying conclusion, and a call to action like 'Subscribe for more fun facts!' "
-        "Make it sound like a passionate creator speaking directly to the viewer — no dry narration!"
+        f"Write a 45 to 60-second YouTube short script about the topic: '{topic}'.\n"
+        "The tone should be energetic, casual, and conversational — like a passionate creator speaking directly to the viewer.\n"
+        "Start with a strong hook, explain the topic in simple terms, and end with a memorable conclusion and call to action like 'Subscribe for more!'\n"
+        "Keep the word count around 120 to 150 words — just enough to fit in a one-minute video.\n"
+        "Avoid dry narration or robotic tone. Include a bit of personality or humor if it fits."
     )
 
     try:
         response = client.chat.completions.create(
-            model="mistralai/mistral-7b-instruct",  # You can change this
+            model="mistralai/mistral-7b-instruct",  # Try Claude or Mixtral for richer style
             messages=[
                 {"role": "system", "content": "You are a helpful YouTube content writer."},
                 {"role": "user", "content": prompt}

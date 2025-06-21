@@ -1,63 +1,96 @@
 from moviepy.editor import *
-from PIL import Image, ImageDraw, ImageFont
+from pexels_video_fetcher import search_pexels_videos, download_video
 import os
-import textwrap
 import re
+import random
+import gc
 
+# 🧠 Smart keyword extractor
+def extract_keyword(sentence, topic):
+    sentence = sentence.lower()
+    topic = topic.lower()
+    context = f"{sentence} {topic}"
+
+    keywords = [
+        "honey", "bees", "beekeeping", "jar", "natural", "sugar", "preservation",
+        "ancient", "bacteria", "nectar", "pollen", "gold", "medicine"
+    ]
+    for word in keywords:
+        if word in context:
+            return word
+
+    words = re.findall(r'\b[a-z]{4,}\b', context)
+    return words[0] if words else "nature"
+
+# 🧾 Split script into sentences
 def clean_sentences(script):
-    # Break on periods, exclamations, and questions
-    sentences = re.split(r'(?<=[.!?]) +', script.strip())
-    return [s for s in sentences if s.strip()]
+    return re.split(r'(?<=[.!?]) +', script.strip())
 
-def generate_text_image(text, output_path, width=1280, height=720):
-    image = Image.new("RGB", (width, height), color=(20, 20, 20))
-    draw = ImageDraw.Draw(image)
-
-    font_path = "C:/Windows/Fonts/arial.ttf"  # Adjust if needed
-    try:
-        font = ImageFont.truetype(font_path, 48)
-    except:
-        font = ImageFont.load_default()
-
-    lines = textwrap.wrap(text, width=40)
-    y = height // 2 - len(lines) * 30
-
-    for line in lines:
-        bbox = draw.textbbox((0, 0), line, font=font)
-        w = bbox[2] - bbox[0]
-        h = bbox[3] - bbox[1]
-        draw.text(((width - w) // 2, y), line, font=font, fill=(255, 255, 255))
-        y += h + 10
-
-    image.save(output_path)
-    return output_path
-
+# 🎬 Final video generator
 def generate_video(script_text, audio_path="assets/audio/voiceover.mp3", output_path="assets/final_video.mp4"):
-    os.makedirs("assets/video", exist_ok=True)
+    os.makedirs("assets/video/clips", exist_ok=True)
 
-    # 🧠 Step 1: Break script into sentences
-    sentences = clean_sentences(script_text)
-    num_sentences = len(sentences)
-
-    # 🔊 Load voiceover and calculate per-slide duration
     audio_clip = AudioFileClip(audio_path)
-    total_duration = audio_clip.duration
-    duration_per_slide = total_duration / num_sentences
+    sentences = clean_sentences(script_text)
 
-    print(f"🎬 Creating {num_sentences} slides, each {duration_per_slide:.2f}s long...")
+    MAX_DURATION = 60  # in seconds
+    MIN_DURATION = 45
 
-    # 🖼️ Step 2: Generate image clips
-    image_clips = []
-    for i, sentence in enumerate(sentences):
-        image_path = f"assets/video/slide_{i+1}.png"
-        generate_text_image(sentence, image_path)
+    total_audio_duration = audio_clip.duration
+    clip_limit = min(len(sentences), int(MAX_DURATION / 3))  # ~3 sec per sentence
 
-        img_clip = ImageClip(image_path).set_duration(duration_per_slide)
-        image_clips.append(img_clip)
+    final_clips = []
+    used_duration = 0
 
-    # 🎞️ Step 3: Concatenate and sync with audio
-    video = concatenate_videoclips(image_clips, method="compose")
-    final_video = video.set_audio(audio_clip)
+    for idx, sentence in enumerate(sentences[:clip_limit]):
+        keyword = extract_keyword(sentence, script_text)
+        print(f"🔍 Sentence {idx+1}: '{sentence.strip()}' ➜ Keyword: '{keyword}'")
 
-    final_video.write_videofile(output_path, fps=24)
-    print(f"✅ Multi-slide video saved at: {output_path}")
+        video_urls = search_pexels_videos(keyword, count=3)
+        if not video_urls:
+            continue
+
+        selected_urls = random.sample(video_urls, min(2, len(video_urls)))
+        subclips = []
+
+        for vid_idx, url in enumerate(selected_urls):
+            filename = f"assets/video/clips/clip_{idx+1}_{vid_idx+1}.mp4"
+            download_video(url, filename)
+
+            try:
+                clip = VideoFileClip(filename)
+                clip_duration = min(3, clip.duration)
+                used_duration += clip_duration
+                if used_duration > MAX_DURATION:
+                    break
+
+                subclip = clip.subclip(0, clip_duration).resize(height=480)
+                subclips.append(subclip)
+            except Exception as e:
+                print(f"❌ Clip error: {e}")
+
+        if subclips:
+            sentence_clip = concatenate_videoclips(subclips, method="compose")
+            final_clips.append(sentence_clip)
+
+        if used_duration > MAX_DURATION:
+            break
+
+    if not final_clips:
+        print("❌ No usable clips. Aborting video.")
+        return
+
+    final_video = concatenate_videoclips(final_clips, method="compose")
+
+    # Trim voiceover to match video
+    audio_trimmed = audio_clip.subclip(0, min(final_video.duration, MAX_DURATION))
+    final_with_audio = final_video.set_audio(audio_trimmed)
+
+    final_with_audio.write_videofile(output_path, fps=24)
+    print(f"✅ Final video saved to: {output_path}")
+
+    # Clean up
+    final_with_audio.close()
+    final_video.close()
+    audio_clip.close()
+    gc.collect()
