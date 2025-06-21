@@ -1,29 +1,31 @@
-import pyttsx3
+from elevenlabs import generate, save, set_api_key, voices
 import os
-import re
+from dotenv import load_dotenv
 
-def clean_script(text):
-    # Remove lines starting with # (comments)
-    cleaned = "\n".join(line for line in text.splitlines() if not line.strip().startswith("#"))
+load_dotenv()
+set_api_key(os.getenv("ELEVENLABS_API_KEY"))
 
-    # Remove content inside parentheses () and brackets []
-    cleaned = re.sub(r"\(.*?\)", "", cleaned)
-    cleaned = re.sub(r"\[.*?\]", "", cleaned)
+def get_valid_voice(preferred="Rachel"):
+    try:
+        voice_list = voices()
+        for v in voice_list:
+            if v.name.lower() == preferred.lower():
+                return v.name
+        print(f"⚠️ '{preferred}' not found. Using '{voice_list[0].name}' instead.")
+        return voice_list[0].name
+    except Exception as e:
+        print("❌ Voice fetch failed:", e)
+        return preferred
 
-    # Replace multiple spaces/newlines with clean formatting
-    cleaned = re.sub(r"\n{2,}", "\n", cleaned)
-    cleaned = re.sub(r" {2,}", " ", cleaned)
-    return cleaned.strip()
-
-def generate_voiceover(script_text, filename="assets/audio/voiceover.mp3"):
+def generate_voiceover(script_data, filename="assets/audio/voiceover.mp3", voice="Rachel"):
     os.makedirs("assets/audio", exist_ok=True)
-    engine = pyttsx3.init()
-    engine.setProperty('rate', 180)
-    engine.setProperty('volume', 1.0)
+    script_text = "\n".join(item["sentence"] for item in script_data)
+    valid_voice = get_valid_voice(voice)
 
-    cleaned_script = clean_script(script_text)
-
-    print("🎤 Generating voiceover...")
-    engine.save_to_file(cleaned_script, filename)
-    engine.runAndWait()
-    print(f"✅ Voiceover saved to: {filename}")
+    try:
+        print(f"🎤 Generating voiceover with voice: {valid_voice}")
+        audio = generate(text=script_text, voice=valid_voice, model="eleven_monolingual_v1")
+        save(audio, filename)
+        print(f"✅ Voiceover saved to: {filename}")
+    except Exception as e:
+        print(f"❌ ElevenLabs Error: {e}")

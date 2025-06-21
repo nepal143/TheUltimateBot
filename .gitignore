@@ -18,3 +18,4 @@ assets/video/
 
 # 🔒 Ensure ALL .mp4 files are ignored globally
 .mp4
+

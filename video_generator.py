@@ -1,50 +1,26 @@
 from moviepy.editor import *
 from pexels_video_fetcher import search_pexels_videos, download_video
 import os
-import re
 import random
 import gc
 
-# 🧠 Smart keyword extractor
-def extract_keyword(sentence, topic):
-    sentence = sentence.lower()
-    topic = topic.lower()
-    context = f"{sentence} {topic}"
-
-    keywords = [
-        "honey", "bees", "beekeeping", "jar", "natural", "sugar", "preservation",
-        "ancient", "bacteria", "nectar", "pollen", "gold", "medicine"
-    ]
-    for word in keywords:
-        if word in context:
-            return word
-
-    words = re.findall(r'\b[a-z]{4,}\b', context)
-    return words[0] if words else "nature"
-
-# 🧾 Split script into sentences
-def clean_sentences(script):
-    return re.split(r'(?<=[.!?]) +', script.strip())
-
-# 🎬 Final video generator
-def generate_video(script_text, audio_path="assets/audio/voiceover.mp3", output_path="assets/final_video.mp4"):
+def generate_video(script_data, audio_path="assets/audio/voiceover.mp3", output_path="assets/final_video.mp4", music_path="assets/music/background.mp3"):
     os.makedirs("assets/video/clips", exist_ok=True)
+    try:
+        audio_clip = AudioFileClip(audio_path)
+    except Exception as e:
+        print(f"❌ Failed to load audio: {e}")
+        return
 
-    audio_clip = AudioFileClip(audio_path)
-    sentences = clean_sentences(script_text)
-
-    MAX_DURATION = 60  # in seconds
-    MIN_DURATION = 45
-
-    total_audio_duration = audio_clip.duration
-    clip_limit = min(len(sentences), int(MAX_DURATION / 3))  # ~3 sec per sentence
-
+    MAX_DURATION = 60
+    clip_limit = min(len(script_data), int(MAX_DURATION / 3))
     final_clips = []
     used_duration = 0
 
-    for idx, sentence in enumerate(sentences[:clip_limit]):
-        keyword = extract_keyword(sentence, script_text)
-        print(f"🔍 Sentence {idx+1}: '{sentence.strip()}' ➜ Keyword: '{keyword}'")
+    for idx, item in enumerate(script_data[:clip_limit]):
+        sentence = item["sentence"]
+        keyword = item["keyword"]
+        print(f"🔍 Sentence {idx+1}: '{sentence.strip()}' ➞ Keyword: '{keyword}'")
 
         video_urls = search_pexels_videos(keyword, count=3)
         if not video_urls:
@@ -56,16 +32,14 @@ def generate_video(script_text, audio_path="assets/audio/voiceover.mp3", output_
         for vid_idx, url in enumerate(selected_urls):
             filename = f"assets/video/clips/clip_{idx+1}_{vid_idx+1}.mp4"
             download_video(url, filename)
-
             try:
                 clip = VideoFileClip(filename)
                 clip_duration = min(3, clip.duration)
-                used_duration += clip_duration
-                if used_duration > MAX_DURATION:
+                if used_duration + clip_duration > MAX_DURATION:
                     break
-
                 subclip = clip.subclip(0, clip_duration).resize(height=480)
                 subclips.append(subclip)
+                used_duration += clip_duration
             except Exception as e:
                 print(f"❌ Clip error: {e}")
 
@@ -77,19 +51,24 @@ def generate_video(script_text, audio_path="assets/audio/voiceover.mp3", output_
             break
 
     if not final_clips:
-        print("❌ No usable clips. Aborting video.")
+        print("❌ No clips found. Aborting.")
         return
 
     final_video = concatenate_videoclips(final_clips, method="compose")
+    safe_duration = min(final_video.duration, audio_clip.duration, MAX_DURATION)
 
-    # Trim voiceover to match video
-    audio_trimmed = audio_clip.subclip(0, min(final_video.duration, MAX_DURATION))
-    final_with_audio = final_video.set_audio(audio_trimmed)
+    try:
+        music = AudioFileClip(music_path).volumex(0.1).subclip(0, safe_duration)
+        voice = audio_clip.subclip(0, safe_duration)
+        final_audio = CompositeAudioClip([music, voice])
+        final_with_audio = final_video.set_audio(final_audio)
+    except Exception as e:
+        print(f"⚠️ Music error: {e}")
+        final_with_audio = final_video.set_audio(audio_clip.subclip(0, safe_duration))
 
     final_with_audio.write_videofile(output_path, fps=24)
-    print(f"✅ Final video saved to: {output_path}")
+    print(f"✅ Final video saved: {output_path}")
 
-    # Clean up
     final_with_audio.close()
     final_video.close()
     audio_clip.close()
