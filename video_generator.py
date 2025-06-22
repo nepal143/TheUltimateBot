@@ -1,11 +1,23 @@
-from moviepy.editor import *
-from pexels_video_fetcher import search_pexels_videos, download_video
 import os
 import random
 import gc
+from moviepy.editor import (
+    AudioFileClip,
+    VideoFileClip,
+    CompositeAudioClip,
+    concatenate_videoclips,
+)
+from pixabay_utils import search_pixabay_videos, download_video  # ✅ Updated import
 
-def generate_video(script_data, audio_path="assets/audio/voiceover.mp3", output_path="assets/final_video.mp4", music_path="assets/music/background.mp3"):
+
+def generate_video(
+    script_data,
+    audio_path="assets/audio/voiceover.mp3",
+    output_path="assets/final_video.mp4",
+    music_path="assets/music/background.mp3"
+):
     os.makedirs("assets/video/clips", exist_ok=True)
+
     try:
         audio_clip = AudioFileClip(audio_path)
     except Exception as e:
@@ -20,9 +32,9 @@ def generate_video(script_data, audio_path="assets/audio/voiceover.mp3", output_
     for idx, item in enumerate(script_data[:clip_limit]):
         sentence = item["sentence"]
         keyword = item["keyword"]
-        print(f"🔍 Sentence {idx+1}: '{sentence.strip()}' ➞ Keyword: '{keyword}'")
+        print(f"🔍 Sentence {idx + 1}: '{sentence.strip()}' ➞ Keyword: '{keyword}'")
 
-        video_urls = search_pexels_videos(keyword, count=3)
+        video_urls = search_pixabay_videos(keyword, count=3)  # ✅ Updated function
         if not video_urls:
             continue
 
@@ -30,7 +42,7 @@ def generate_video(script_data, audio_path="assets/audio/voiceover.mp3", output_
         subclips = []
 
         for vid_idx, url in enumerate(selected_urls):
-            filename = f"assets/video/clips/clip_{idx+1}_{vid_idx+1}.mp4"
+            filename = f"assets/video/clips/clip_{idx + 1}_{vid_idx + 1}.mp4"
             download_video(url, filename)
             try:
                 clip = VideoFileClip(filename)
@@ -58,6 +70,7 @@ def generate_video(script_data, audio_path="assets/audio/voiceover.mp3", output_
     safe_duration = min(final_video.duration, audio_clip.duration, MAX_DURATION)
 
     try:
+        print(f"🎵 Using music file: {music_path}")  # Debug log
         music = AudioFileClip(music_path).volumex(0.1).subclip(0, safe_duration)
         voice = audio_clip.subclip(0, safe_duration)
         final_audio = CompositeAudioClip([music, voice])

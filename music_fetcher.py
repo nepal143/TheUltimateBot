@@ -1,23 +1,41 @@
 import os
 import requests
 
-def fetch_background_music(filename="assets/music/background.mp3"):
-    os.makedirs("assets/music", exist_ok=True)
+MUSIC_URLS_BY_MOOD = {
+    "uplifting": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    "chill": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+    "epic": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+    "lofi": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+    "mysterious": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+}
 
-    fallback_music_urls = [
-        "https://cdn.pixabay.com/audio/2022/10/19/audio_3514b2b31f.mp3",
-        "https://cdn.pixabay.com/audio/2022/03/15/audio_c2c5a5c3d5.mp3",
-        "https://cdn.pixabay.com/audio/2022/06/07/audio_5a3e50590b.mp3",
-        "https://cdn.pixabay.com/audio/2021/08/09/audio_d91c57a9d7.mp3",
-    ]
+def fetch_background_music(mood="uplifting", filename="assets/music/background.mp3"):
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
+
+    if not filename.lower().endswith(".mp3"):
+        filename += ".mp3"
+
+    url = MUSIC_URLS_BY_MOOD.get(mood.lower())
+    if not url:
+        print(f"⚠️ Unknown mood '{mood}', falling back to 'uplifting'.")
+        url = MUSIC_URLS_BY_MOOD["uplifting"]
 
     try:
-        selected_url = fallback_music_urls[0]
-        response = requests.get(selected_url)
+        print(f"🎵 Downloading '{mood}' music from: {url}")
+        response = requests.get(url, stream=True, timeout=15)
+        response.raise_for_status()
+
         with open(filename, "wb") as f:
-            f.write(response.content)
+            for chunk in response.iter_content(chunk_size=8192):
+                f.write(chunk)
+
+        if os.path.getsize(filename) < 100000:
+            print(f"⚠️ Music file may be incomplete. Size too small.")
+            return None
+
         print(f"✅ Music downloaded to: {filename}")
         return filename
+
     except Exception as e:
         print(f"❌ Music download failed: {e}")
         return None
