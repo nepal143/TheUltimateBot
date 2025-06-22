@@ -5,14 +5,19 @@ from music_fetcher import fetch_background_music
 
 if __name__ == "__main__":
     topic = input("🎯 Enter your video topic: ")
-    script = generate_youtube_script(topic)
+    result = generate_youtube_script(topic)
 
-    if script:
+    if result:
+        script_data = result["script"]
+        mood = result.get("mood", "uplifting")
+
         print("\n📝 Your Gemini-Generated Script:\n")
-        print(script)
+        for idx, item in enumerate(script_data):
+            print(f"{idx + 1}. {item['sentence']} [Keyword: {item['keyword']}]")
+        print(f"\n🎶 Suggested Music Mood: {mood}")
 
-        generate_voiceover(script)
-        music_path = fetch_background_music("uplifting") or "assets/music/default.mp3"
-        generate_video(script, music_path=music_path)
+        generate_voiceover(script_data)
+        music_path = fetch_background_music(mood) or "assets/music/default.mp3"
+        generate_video(script_data, music_path=music_path)
     else:
         print("❌ Script generation failed.")

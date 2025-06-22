@@ -9,20 +9,31 @@ openai.api_base = "https://openrouter.ai/api/v1"
 
 def generate_youtube_script(topic):
     prompt = (
-        f"Write a 45–60 second YouTube short script on the topic: '{topic}'.\n"
-        "Respond in strict JSON format with an array of objects. Each object must have:\n"
-        "- sentence: a line of the script (keep it natural and short)\n"
-        "- keyword: one relevant visual keyword (noun/concept) from that sentence to help search for related stock video\n"
+        f"Write a 45–60 second YouTube Shorts script on the topic: '{topic}'.\n"
+        "Return a JSON object with 2 properties:\n"
+        "- script: an array of objects with:\n"
+        "   - sentence: short line in the script (under 25 words)\n"
+        "   - keyword: descriptive visual search keyword (no duplicates, specific)\n"
+        "- mood: one descriptive music mood (e.g., 'epic', 'chill', 'uplifting', 'lofi') to match the video tone.\n\n"
+        "Example:\n"
+        "{\n"
+        "  \"script\": [\n"
+        "    {\"sentence\": \"The sun rises over ancient ruins...\", \"keyword\": \"sunrise over old stone ruins\"},\n"
+        "    {\"sentence\": \"History lives in these stones.\", \"keyword\": \"close-up of carved ancient writing\"}\n"
+        "  ],\n"
+        "  \"mood\": \"mysterious\"\n"
+        "}\n\n"
+        "Respond ONLY with this JSON object."
     )
 
     try:
         response = openai.ChatCompletion.create(
             model="mistralai/mistral-7b-instruct",
             messages=[
-                {"role": "system", "content": "You are a helpful YouTube content writer."},
+                {"role": "system", "content": "You are a YouTube script generator with stock footage and music matching."},
                 {"role": "user", "content": prompt}
             ],
-            temperature=0.7,
+            temperature=0.8,
         )
         raw = response['choices'][0]['message']['content'].strip()
 
