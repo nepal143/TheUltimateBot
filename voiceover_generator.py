@@ -6,7 +6,7 @@ load_dotenv()
 set_api_key(os.getenv("ELEVENLABS_API_KEY"))
 
 # Preferred fallback order
-PREFERRED_VOICES = ["Rachel", "Josh", "Clyde", "Adam" ,"Callum", "George", "Charlotte"]
+PREFERRED_VOICES = ["Rachel", "Josh", "Clyde", "Adam" , "George","Callum", "Charlotte"]
 
 def get_valid_voice(preferred_list=PREFERRED_VOICES):
     try:
