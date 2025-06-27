@@ -1,50 +1,57 @@
 import os
 import requests
+from moviepy.editor import VideoFileClip
 from dotenv import load_dotenv
 
-# Load API key
+# Load API key from .env
 load_dotenv()
-PIXABAY_API_KEY = os.getenv("PIXABAY_API_KEY")
+GIPHY_API_KEY = os.getenv("GIPHY_API_KEY")
 
 HEADERS = {
     "Accept": "application/json"
 }
 
-def search_pixabay_videos(query, count=4):
-    url = (
-        f"https://pixabay.com/api/videos/?key={PIXABAY_API_KEY}"
-        f"&q={query}&per_page={count}"
-    )
+fallback_terms = ["anime fight", "anime fire", "anime punch", "cyberpunk", "anime explosion"]
+
+def search_pixabay_videos(query, count=3):
+    # Clean overly long queries
+    clean_query = " ".join(query.split()[:6])
+    if len(clean_query) > 50:
+        clean_query = clean_query[:50]
+
+    url = f"https://api.giphy.com/v1/gifs/search?api_key={GIPHY_API_KEY}&q={clean_query}&limit={count}"
     response = requests.get(url, headers=HEADERS)
+
     if response.status_code != 200:
-        print(f"❌ Pixabay Error: {response.status_code} - {response.text}")
+        print(f"❌ Giphy Error: {response.status_code} - {response.text}")
         return []
 
-    videos = response.json().get("hits", [])
-    video_links = []
-
-    for v in videos:
-        # Select the highest quality available (e.g., "large" resolution)
-        if "videos" in v and "large" in v["videos"]:
-            video_links.append(v["videos"]["large"]["url"])
-        elif "videos" in v and "medium" in v["videos"]:
-            video_links.append(v["videos"]["medium"]["url"])
+    gifs = response.json().get("data", [])
+    gif_urls = [g["images"]["original"]["url"] for g in gifs if "images" in g]
     
-    return video_links
+    # Fallback logic if no valid GIFs found
+    if not gif_urls:
+        print(f"⚠️ No results for query: '{query}'. Trying fallback...")
+        fallback = fallback_terms[hash(query) % len(fallback_terms)]
+        return search_pixabay_videos(fallback, count)
 
-def download_video(url, filename):
-    os.makedirs(os.path.dirname(filename), exist_ok=True)
-    response = requests.get(url, stream=True)
-    with open(filename, "wb") as f:
-        for chunk in response.iter_content(8192):
-            f.write(chunk)
-    print(f"✅ Downloaded: {filename}")
-    return filename
+    return gif_urls
 
-# Example usage
-if __name__ == "__main__":
-    query = "cyberpunk city"  # or "cat", "magic", etc.
-    videos = search_pixabay_videos(query, count=3)
+def download_video(gif_url, output_path):
+    gif_temp_path = output_path.replace(".mp4", ".gif")
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
-    for idx, link in enumerate(videos):
-        download_video(link, f"assets/video/pixabay_{idx+1}.mp4")
+    try:
+        gif_data = requests.get(gif_url).content
+        with open(gif_temp_path, "wb") as f:
+            f.write(gif_data)
+        print(f"⬇️ Downloaded GIF: {gif_temp_path}")
+
+        clip = VideoFileClip(gif_temp_path)
+        clip.write_videofile(output_path, codec="libx264", audio=False)
+        print(f"✅ Converted to MP4: {output_path}")
+    except Exception as e:
+        print(f"⚠️ Failed: {gif_url} ➞ {e}")
+    finally:
+        if os.path.exists(gif_temp_path):
+            os.remove(gif_temp_path)

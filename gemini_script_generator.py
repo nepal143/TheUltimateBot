@@ -9,37 +9,42 @@ openai.api_base = "https://openrouter.ai/api/v1"
 
 def generate_youtube_script(topic):
     prompt = (
-        f"Write a YouTube Shorts script on the topic: '{topic}'.\n"
-        "The script must be 60–90 seconds long and contain at least **15 to 25 lines**, one per sentence.\n"
-        "Return a JSON object with two properties:\n"
-        "1. 'script': an array of objects with:\n"
-        "   - 'sentence': short, casual, engaging line in the script (under 25 words)\n"
-        "   - 'keyword': a descriptive, specific visual search phrase for stock footage (no repeats, no vague terms)\n"
-        "2. 'mood': a single word describing background music mood (e.g., 'epic', 'uplifting', 'mysterious', 'lofi')\n\n"
-        "**Keyword Tips:**\n"
-        "- Avoid generic terms like 'person', 'walking', 'city'\n"
-        "- Use clear stock-footage-style descriptions like 'man walking with umbrella in storm' or 'drone shot over mountain valley at sunrise'\n"
-        "- Each keyword should match the sentence and be visually distinct\n\n"
-        "Example output:\n"
+        f"Generate a controversial YouTube Shorts script for the anime/game/series topic: '{topic}'.\n\n"
+        "Script Format:\n"
+        "- Write 15 to 25 lines (1 punchy sentence each, max 25 words)\n"
+        "- Each line must be a bold take, hot opinion, or debate-worthy questio and each line must have relation with the topic \n"
+        "- Use phrasing like: 'Hot take:', 'Let’s be real...', 'What if...', 'Imagine if...'\n"
+        "- Focus on characters, power scaling, alternate outcomes, betrayals, abilities, etc.\n"
+        "- End with a line that invites comment (e.g., 'Agree or nah?', 'Drop your take.')\n"
+        "- ✳️ Keep it **simple and easy to understand** — avoid overcomplicating things or using hard-to-follow logic\n\n"
+        "Return this format:\n"
         "{\n"
         "  \"script\": [\n"
-        "    {\"sentence\": \"The sun rises over ancient ruins...\", \"keyword\": \"sunrise over old stone ruins\"},\n"
-        "    {\"sentence\": \"History lives in these stones.\", \"keyword\": \"close-up of carved ancient writing\"},\n"
-        "    ... (at least 10 lines total)\n"
+        "    {\"sentence\": \"<your line>\", \"keyword\": \"<anime-specific term with 2–4 words>\"},\n"
+        "    ...\n"
         "  ],\n"
-        "  \"mood\": \"mysterious\"\n"
+        "  \"mood\": \"<one-word music mood like 'epic', 'lofi', 'tense'>\"\n"
         "}\n\n"
-        "Respond ONLY with the raw JSON object. No extra text or explanation."
+        "⚠️ Keyword Rules:\n"
+        "- Keywords will be used to search **Giphy** for anime GIFs\n"
+        "- Must contain ONLY terms/names from the same anime/game try using mostly names only every single keyword muset have first word reference with the series or anime  \n"
+        "- Use official names of characters, powers, forms, items — like 'Gojo Six Eyes', 'Luffy Gear Fifth'\n"
+        "- No vague emotions, story descriptions, or general terms\n"
+        "- Keep each keyword 2 to 4 words max\n"
+        "- Each keyword must be unique\n"
+        "- Avoid using generic terms like 'anime', 'fight', 'power' — focus on specific characters or abilities\n"
+        "✅ Valid examples: 'Gojo Six Eyes', 'Eren Founding Titan', 'Luffy Gear Fifth', 'Jin-Woo Shadow Monarch'\n\n"
+        "Respond ONLY with the raw JSON object. No explanations or markdown formatting."
     )
 
     try:
         response = openai.ChatCompletion.create(
             model="mistralai/mistral-7b-instruct",
             messages=[
-                {"role": "system", "content": "You are a YouTube script generator with stock footage and music mood matching."},
+                {"role": "system", "content": "You generate spicy anime/gaming takes in JSON with official character-based keywords for Giphy search."},
                 {"role": "user", "content": prompt}
             ],
-            temperature=0.8,
+            temperature=0.95,
         )
         raw = response['choices'][0]['message']['content'].strip()
 
