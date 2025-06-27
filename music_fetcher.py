@@ -1,41 +1,27 @@
 import os
-import requests
-
-MUSIC_URLS_BY_MOOD = {
-    "uplifting": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-    "chill": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
-    "epic": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
-    "lofi": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
-    "mysterious": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
-}
+import random
 
 def fetch_background_music(mood="uplifting", filename="assets/music/background.mp3"):
+    music_dir = "assets/music"
     os.makedirs(os.path.dirname(filename), exist_ok=True)
 
-    if not filename.lower().endswith(".mp3"):
-        filename += ".mp3"
+    # Get list of all MP3s in the folder
+    all_mp3s = [f for f in os.listdir(music_dir) if f.lower().endswith(".mp3")]
+    if not all_mp3s:
+        print("❌ No music files found in 'assets/music'.")
+        return None
 
-    url = MUSIC_URLS_BY_MOOD.get(mood.lower())
-    if not url:
-        print(f"⚠️ Unknown mood '{mood}', falling back to 'uplifting'.")
-        url = MUSIC_URLS_BY_MOOD["uplifting"]
+    # Try to filter by mood in filename
+    mood_filtered = [f for f in all_mp3s if mood.lower() in f.lower()]
+    selected_file = random.choice(mood_filtered if mood_filtered else all_mp3s)
 
+    # Copy to target path (background.mp3)
+    source_path = os.path.join(music_dir, selected_file)
     try:
-        print(f"🎵 Downloading '{mood}' music from: {url}")
-        response = requests.get(url, stream=True, timeout=15)
-        response.raise_for_status()
-
-        with open(filename, "wb") as f:
-            for chunk in response.iter_content(chunk_size=8192):
-                f.write(chunk)
-
-        if os.path.getsize(filename) < 100000:
-            print(f"⚠️ Music file may be incomplete. Size too small.")
-            return None
-
-        print(f"✅ Music downloaded to: {filename}")
+        with open(source_path, "rb") as src, open(filename, "wb") as dst:
+            dst.write(src.read())
+        print(f"✅ Selected background music: {selected_file}")
         return filename
-
     except Exception as e:
-        print(f"❌ Music download failed: {e}")
+        print(f"❌ Failed to copy music file: {e}")
         return None
