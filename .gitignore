@@ -14,7 +14,7 @@ venv/
 # 📂 Block all generated scripts and media
 assets/scripts/
 assets/audio/
-assets/video/
-
-# 🔒 Ensure ALL .mp4 files are ignored globally
-.mp4
+assets/video
+/Lib
+/Scripts
+.cfg
