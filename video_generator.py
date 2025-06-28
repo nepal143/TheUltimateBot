@@ -7,6 +7,7 @@ from moviepy.editor import (
     CompositeAudioClip,
     concatenate_videoclips,
 )
+from moviepy.video.fx.all import resize, crop
 from pixabay_utils import search_pixabay_videos, download_video  # ✅ Custom helper
 
 def generate_video(
@@ -37,19 +38,22 @@ def generate_video(
 
         try:
             voice = AudioFileClip(audio_path)
-            target_duration = voice.duration  # 🟢 Match entire voice length
+            target_duration = voice.duration
 
             accumulated = 0
             gif_clips = []
 
             loop_index = 0
-            while accumulated < target_duration:
+            retry_attempts = 0
+            while accumulated < target_duration and retry_attempts < 5:
                 gif_url = video_urls[loop_index % len(video_urls)]
                 temp_path = f"assets/video/clips/temp_{idx + 1}_{loop_index}.mp4"
                 download_video(gif_url, temp_path)
 
                 try:
-                    clip = VideoFileClip(temp_path).resize(height=480)
+                    clip = VideoFileClip(temp_path).resize(height=1280)
+                    clip = crop(clip, width=720, height=1280, x_center=clip.w // 2, y_center=clip.h // 2)
+
                     remaining = target_duration - accumulated
 
                     if clip.duration <= remaining:
@@ -58,12 +62,13 @@ def generate_video(
                     else:
                         gif_clips.append(clip.subclip(0, remaining))
                         accumulated += remaining
+
                 except Exception as e:
                     print(f"⚠️ Skipping broken clip {temp_path}: {e}")
+                    retry_attempts += 1
 
                 loop_index += 1
 
-                # Prevent infinite loop if all clips fail
                 if loop_index > 20:
                     print("⚠️ Breaking to avoid infinite GIF loop")
                     break
@@ -74,7 +79,6 @@ def generate_video(
 
             stitched = concatenate_videoclips(gif_clips, method="compose")
             stitched = stitched.set_audio(voice)
-
             final_clips.append(stitched)
             used_duration += target_duration
 
@@ -91,6 +95,17 @@ def generate_video(
     try:
         final_video = concatenate_videoclips(final_clips, method="compose")
 
+        # 🔄 Dynamically find a free filename
+        base_output = "assets/final_video"
+        ext = ".mp4"
+        counter = 0
+        final_output = f"{base_output}{ext}"
+        while os.path.exists(final_output):
+            counter += 1
+            final_output = f"{base_output}_{counter}{ext}"
+
+        print(f"🎬 Output path set to: {final_output}")
+
         if music_path and os.path.exists(music_path):
             try:
                 music = AudioFileClip(music_path).volumex(0.1).subclip(0, final_video.duration)
@@ -99,8 +114,8 @@ def generate_video(
             except Exception as e:
                 print(f"⚠️ Music error: {e}")
 
-        final_video.write_videofile(output_path, fps=24)
-        print(f"✅ Final video saved: {output_path}")
+        final_video.write_videofile(final_output, fps=24)
+        print(f"✅ Final video saved: {final_output}")
 
         final_video.close()
         gc.collect()

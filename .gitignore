@@ -15,4 +15,6 @@ venv/
 assets/scripts/
 assets/audio/
 assets/video
-
+/Lib
+/Scripts
+.cfg

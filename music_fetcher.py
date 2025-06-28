@@ -1,5 +1,6 @@
 import os
 import random
+from moviepy.editor import AudioFileClip
 
 def fetch_background_music(mood="uplifting", filename="assets/music/background.mp3"):
     music_dir = "assets/music"
@@ -11,17 +12,24 @@ def fetch_background_music(mood="uplifting", filename="assets/music/background.m
         print("❌ No music files found in 'assets/music'.")
         return None
 
-    # Try to filter by mood in filename
+    # Filter by mood if possible
     mood_filtered = [f for f in all_mp3s if mood.lower() in f.lower()]
-    selected_file = random.choice(mood_filtered if mood_filtered else all_mp3s)
+    candidates = mood_filtered if mood_filtered else all_mp3s
+    random.shuffle(candidates)
 
-    # Copy to target path (background.mp3)
-    source_path = os.path.join(music_dir, selected_file)
-    try:
-        with open(source_path, "rb") as src, open(filename, "wb") as dst:
-            dst.write(src.read())
-        print(f"✅ Selected background music: {selected_file}")
-        return filename
-    except Exception as e:
-        print(f"❌ Failed to copy music file: {e}")
-        return None
+    # Try loading each candidate until one works
+    for file in candidates:
+        full_path = os.path.join(music_dir, file)
+        try:
+            test = AudioFileClip(full_path)
+            test.close()
+
+            with open(full_path, "rb") as src, open(filename, "wb") as dst:
+                dst.write(src.read())
+            print(f"✅ Selected background music: {file}")
+            return filename
+        except Exception as e:
+            print(f"⚠️ Skipping invalid MP3 '{file}': {e}")
+
+    print("❌ All music files are unreadable or corrupt.")
+    return None
