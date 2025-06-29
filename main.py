@@ -21,3 +21,4 @@ if __name__ == "__main__":
         generate_video(script_data, music_path=music_path)
     else:
         print("❌ Script generation failed.")
+

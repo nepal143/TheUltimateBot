@@ -1,14 +1,27 @@
 import os
 import random
 import gc
+
+# ✅ ADD THIS:
+from moviepy.config import change_settings
+
+# ✅ Tell MoviePy exactly where ImageMagick lives:
+change_settings({
+    "IMAGEMAGICK_BINARY": r"C:\Program Files\ImageMagick-7.1.1-Q16-HDRI\magick.exe"
+})
+# ⚡ Replace the path above with YOUR install location! Run `where magick` in CMD to check.
+
 from moviepy.editor import (
     AudioFileClip,
     VideoFileClip,
     CompositeAudioClip,
     concatenate_videoclips,
+    CompositeVideoClip,
+    TextClip
 )
 from moviepy.video.fx.all import resize, crop
 from pixabay_utils import search_pixabay_videos, download_video  # ✅ Custom helper
+
 
 def generate_video(
     script_data,
@@ -57,18 +70,38 @@ def generate_video(
                     remaining = target_duration - accumulated
 
                     if clip.duration <= remaining:
-                        gif_clips.append(clip)
+                        gif_clip = clip
                         accumulated += clip.duration
                     else:
-                        gif_clips.append(clip.subclip(0, remaining))
+                        gif_clip = clip.subclip(0, remaining)
                         accumulated += remaining
+
+                    # ✅ SAFETY: Use Arial first to test.
+                    caption = (
+                    TextClip(
+                        sentence,
+                        fontsize=80,              # ✅ Slightly bigger
+                        color='yellow',           # ✅ Brighter text color
+                        font='Impact',            # ✅ Try Impact for bolder feel (or your BebasNeue if installed)
+                        stroke_color='black',     # ✅ Strong dark outline
+                        stroke_width=6,           # ✅ Thicker outline for pop
+                        method='caption',
+                        size=(700, None)
+                    )
+                    .set_position(("center", "bottom"))
+                    .set_duration(gif_clip.duration)
+                )
+
+
+                    gif_with_caption = CompositeVideoClip([gif_clip, caption])
+                    gif_with_caption = gif_with_caption.set_audio(None)  # Audio comes from the stitched layer
+                    gif_clips.append(gif_with_caption)
 
                 except Exception as e:
                     print(f"⚠️ Skipping broken clip {temp_path}: {e}")
                     retry_attempts += 1
 
                 loop_index += 1
-
                 if loop_index > 20:
                     print("⚠️ Breaking to avoid infinite GIF loop")
                     break
@@ -108,7 +141,7 @@ def generate_video(
 
         if music_path and os.path.exists(music_path):
             try:
-                music = AudioFileClip(music_path).volumex(0.1).subclip(0, final_video.duration)
+                music = AudioFileClip(music_path).volumex(0.03).subclip(0, final_video.duration)
                 final_audio = CompositeAudioClip([final_video.audio, music])
                 final_video = final_video.set_audio(final_audio)
             except Exception as e:
