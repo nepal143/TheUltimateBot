@@ -1,0 +1,69 @@
+{
+  "words": [
+    {
+      "word": "Harry",
+      "start": 0.0,
+      "end": 0.382
+    },
+    {
+      "word": "Potter",
+      "start": 0.382,
+      "end": 0.763
+    },
+    {
+      "word": "vs.",
+      "start": 0.763,
+      "end": 1.145
+    },
+    {
+      "word": "Naruto",
+      "start": 1.145,
+      "end": 1.526
+    },
+    {
+      "word": "Uzumaki:",
+      "start": 1.526,
+      "end": 1.908
+    },
+    {
+      "word": "Who",
+      "start": 1.908,
+      "end": 2.289
+    },
+    {
+      "word": "would",
+      "start": 2.289,
+      "end": 2.671
+    },
+    {
+      "word": "win",
+      "start": 2.671,
+      "end": 3.052
+    },
+    {
+      "word": "in",
+      "start": 3.052,
+      "end": 3.434
+    },
+    {
+      "word": "a",
+      "start": 3.434,
+      "end": 3.815
+    },
+    {
+      "word": "friendly",
+      "start": 3.815,
+      "end": 4.197
+    },
+    {
+      "word": "Quidditch",
+      "start": 4.197,
+      "end": 4.578
+    },
+    {
+      "word": "match?",
+      "start": 4.578,
+      "end": 4.96
+    }
+  ]
+}

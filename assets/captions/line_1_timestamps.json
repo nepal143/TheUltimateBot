@@ -1,0 +1,69 @@
+{
+  "words": [
+    {
+      "word": "Hot",
+      "start": 0.0,
+      "end": 0.36
+    },
+    {
+      "word": "take:",
+      "start": 0.36,
+      "end": 0.72
+    },
+    {
+      "word": "Iron",
+      "start": 0.72,
+      "end": 1.08
+    },
+    {
+      "word": "Man",
+      "start": 1.08,
+      "end": 1.44
+    },
+    {
+      "word": "is",
+      "start": 1.44,
+      "end": 1.8
+    },
+    {
+      "word": "overrated,",
+      "start": 1.8,
+      "end": 2.16
+    },
+    {
+      "word": "Hulk",
+      "start": 2.16,
+      "end": 2.52
+    },
+    {
+      "word": "is",
+      "start": 2.52,
+      "end": 2.88
+    },
+    {
+      "word": "the",
+      "start": 2.88,
+      "end": 3.24
+    },
+    {
+      "word": "real",
+      "start": 3.24,
+      "end": 3.6
+    },
+    {
+      "word": "MVP",
+      "start": 3.6,
+      "end": 3.96
+    },
+    {
+      "word": "of",
+      "start": 3.96,
+      "end": 4.32
+    },
+    {
+      "word": "Marvel.",
+      "start": 4.32,
+      "end": 4.68
+    }
+  ]
+}

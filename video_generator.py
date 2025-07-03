@@ -1,15 +1,13 @@
 import os
 import random
 import gc
+import json
 
-# ✅ ADD THIS:
 from moviepy.config import change_settings
 
-# ✅ Tell MoviePy exactly where ImageMagick lives:
 change_settings({
     "IMAGEMAGICK_BINARY": r"C:\Program Files\ImageMagick-7.1.1-Q16-HDRI\magick.exe"
 })
-# ⚡ Replace the path above with YOUR install location! Run `where magick` in CMD to check.
 
 from moviepy.editor import (
     AudioFileClip,
@@ -20,13 +18,15 @@ from moviepy.editor import (
     TextClip
 )
 from moviepy.video.fx.all import resize, crop
-from pixabay_utils import search_pixabay_videos, download_video  # ✅ Custom helper
+
+from pixabay_utils import search_pixabay_videos, download_video
+
+from word_timestamp_generator import generate_fake_word_timestamps
 
 
 def generate_video(
     script_data,
     audio_dir="assets/audio/lines",
-    output_path="assets/final_video.mp4",
     music_path="assets/music/background.mp3"
 ):
     os.makedirs("assets/video/clips", exist_ok=True)
@@ -49,74 +49,77 @@ def generate_video(
             print(f"⚠️ No voiceover found for line {idx + 1}")
             continue
 
+        output_json = f"assets/captions/line_{idx + 1}_timestamps.json"
+        generate_fake_word_timestamps(sentence, audio_path, output_json)
+
         try:
             voice = AudioFileClip(audio_path)
             target_duration = voice.duration
 
             accumulated = 0
-            gif_clips = []
-
+            clip_parts = []
             loop_index = 0
-            retry_attempts = 0
-            while accumulated < target_duration and retry_attempts < 5:
-                gif_url = video_urls[loop_index % len(video_urls)]
+
+            while accumulated < target_duration:
+                video_url = video_urls[loop_index % len(video_urls)]
                 temp_path = f"assets/video/clips/temp_{idx + 1}_{loop_index}.mp4"
-                download_video(gif_url, temp_path)
+                download_video(video_url, temp_path)
 
-                try:
-                    clip = VideoFileClip(temp_path).resize(height=1280)
-                    clip = crop(clip, width=720, height=1280, x_center=clip.w // 2, y_center=clip.h // 2)
+                clip = VideoFileClip(temp_path).resize(height=1280)
+                clip = crop(clip, width=720, height=1280, x_center=clip.w // 2, y_center=clip.h // 2)
 
-                    remaining = target_duration - accumulated
+                remaining = target_duration - accumulated
+                if clip.duration <= remaining:
+                    part = clip
+                else:
+                    part = clip.subclip(0, remaining)
 
-                    if clip.duration <= remaining:
-                        gif_clip = clip
-                        accumulated += clip.duration
-                    else:
-                        gif_clip = clip.subclip(0, remaining)
-                        accumulated += remaining
-
-                    # ✅ SAFETY: Use Arial first to test.
-                    caption = (
-                    TextClip(
-                        sentence,
-                        fontsize=80,              # ✅ Slightly bigger
-                        color='yellow',           # ✅ Brighter text color
-                        font='Impact',            # ✅ Try Impact for bolder feel (or your BebasNeue if installed)
-                        stroke_color='black',     # ✅ Strong dark outline
-                        stroke_width=6,           # ✅ Thicker outline for pop
-                        method='caption',
-                        size=(700, None)
-                    )
-                    .set_position(("center", "bottom"))
-                    .set_duration(gif_clip.duration)
-                )
-
-
-                    gif_with_caption = CompositeVideoClip([gif_clip, caption])
-                    gif_with_caption = gif_with_caption.set_audio(None)  # Audio comes from the stitched layer
-                    gif_clips.append(gif_with_caption)
-
-                except Exception as e:
-                    print(f"⚠️ Skipping broken clip {temp_path}: {e}")
-                    retry_attempts += 1
+                accumulated += part.duration
+                clip_parts.append(part)
 
                 loop_index += 1
                 if loop_index > 20:
-                    print("⚠️ Breaking to avoid infinite GIF loop")
+                    print(f"⚠️ Breaking loop for line {idx + 1} — too many clips.")
                     break
 
-            if not gif_clips:
-                print(f"⚠️ Could not assemble clips for line {idx + 1}")
-                continue
+            stitched_clip = concatenate_videoclips(clip_parts, method="compose")
 
-            stitched = concatenate_videoclips(gif_clips, method="compose")
-            stitched = stitched.set_audio(voice)
-            final_clips.append(stitched)
+            # ✅ Load word timestamps
+            with open(output_json, "r", encoding="utf-8") as f:
+                word_data = json.load(f)["words"]
+
+            # ✅ Create word-by-word TextClips — only once!
+            word_clips = []
+            for w in word_data:
+                word_clip = (
+                    TextClip(
+                        txt=w["word"],
+                        fontsize=80,
+                        font='Impact',
+                        color='yellow',
+                        stroke_color='black',
+                        stroke_width=6,
+                        method='caption',
+                        size=(700, None)
+                    )
+                    .set_start(w["start"])
+                    .set_end(w["end"])
+                    .set_position(("center", "bottom"))
+                    .crossfadein(0.05)
+                    .crossfadeout(0.05)
+                )
+                word_clips.append(word_clip)
+
+            # ✅ Composite: base visuals + captions once only
+            stitched_with_captions = CompositeVideoClip([stitched_clip] + word_clips)
+            stitched_with_captions = stitched_with_captions.set_audio(voice)
+            stitched_with_captions = stitched_with_captions.set_duration(voice.duration)
+
+            final_clips.append(stitched_with_captions)
             used_duration += target_duration
 
         except Exception as e:
-            print(f"❌ Error processing line {idx + 1}: {e}")
+            print(f"❌ Error on line {idx + 1}: {e}")
 
         if used_duration >= MAX_DURATION:
             break
@@ -125,33 +128,30 @@ def generate_video(
         print("❌ No clips to render.")
         return
 
-    try:
-        final_video = concatenate_videoclips(final_clips, method="compose")
+    # ✅ Stitch all lines together
+    final_video = concatenate_videoclips(final_clips, method="compose")
 
-        # 🔄 Dynamically find a free filename
-        base_output = "assets/final_video"
-        ext = ".mp4"
-        counter = 0
-        final_output = f"{base_output}{ext}"
-        while os.path.exists(final_output):
-            counter += 1
-            final_output = f"{base_output}_{counter}{ext}"
+    # ✅ Add background music (optional)
+    if music_path and os.path.exists(music_path):
+        try:
+            music = AudioFileClip(music_path).volumex(0.03).subclip(0, final_video.duration)
+            final_audio = CompositeAudioClip([final_video.audio, music])
+            final_video = final_video.set_audio(final_audio)
+        except Exception as e:
+            print(f"⚠️ Music error: {e}")
 
-        print(f"🎬 Output path set to: {final_output}")
+    # ✅ Save with auto-increment
+    base_output = "assets/final_video"
+    ext = ".mp4"
+    counter = 0
+    final_output = f"{base_output}{ext}"
+    while os.path.exists(final_output):
+        counter += 1
+        final_output = f"{base_output}_{counter}{ext}"
 
-        if music_path and os.path.exists(music_path):
-            try:
-                music = AudioFileClip(music_path).volumex(0.03).subclip(0, final_video.duration)
-                final_audio = CompositeAudioClip([final_video.audio, music])
-                final_video = final_video.set_audio(final_audio)
-            except Exception as e:
-                print(f"⚠️ Music error: {e}")
+    final_video.write_videofile(final_output, fps=24)
+    print(f"✅ Final video saved: {final_output}")
 
-        final_video.write_videofile(final_output, fps=24)
-        print(f"✅ Final video saved: {final_output}")
+    final_video.close()
+    gc.collect()
 
-        final_video.close()
-        gc.collect()
-
-    except Exception as e:
-        print(f"❌ Final video generation failed: {e}")

@@ -1,0 +1,94 @@
+{
+  "words": [
+    {
+      "word": "What",
+      "start": 0.0,
+      "end": 0.279
+    },
+    {
+      "word": "if",
+      "start": 0.279,
+      "end": 0.558
+    },
+    {
+      "word": "Thor",
+      "start": 0.558,
+      "end": 0.837
+    },
+    {
+      "word": "gave",
+      "start": 0.837,
+      "end": 1.116
+    },
+    {
+      "word": "Storm",
+      "start": 1.116,
+      "end": 1.394
+    },
+    {
+      "word": "his",
+      "start": 1.394,
+      "end": 1.673
+    },
+    {
+      "word": "hammer?",
+      "start": 1.673,
+      "end": 1.952
+    },
+    {
+      "word": "A",
+      "start": 1.952,
+      "end": 2.231
+    },
+    {
+      "word": "thunderstorm",
+      "start": 2.231,
+      "end": 2.51
+    },
+    {
+      "word": "in",
+      "start": 2.51,
+      "end": 2.789
+    },
+    {
+      "word": "the",
+      "start": 2.789,
+      "end": 3.068
+    },
+    {
+      "word": "East",
+      "start": 3.068,
+      "end": 3.347
+    },
+    {
+      "word": "meets",
+      "start": 3.347,
+      "end": 3.626
+    },
+    {
+      "word": "a",
+      "start": 3.626,
+      "end": 3.904
+    },
+    {
+      "word": "hurricane",
+      "start": 3.904,
+      "end": 4.183
+    },
+    {
+      "word": "in",
+      "start": 4.183,
+      "end": 4.462
+    },
+    {
+      "word": "the",
+      "start": 4.462,
+      "end": 4.741
+    },
+    {
+      "word": "West!",
+      "start": 4.741,
+      "end": 5.02
+    }
+  ]
+}

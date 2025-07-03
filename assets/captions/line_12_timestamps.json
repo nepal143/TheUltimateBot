@@ -1,0 +1,59 @@
+{
+  "words": [
+    {
+      "word": "What",
+      "start": 0.0,
+      "end": 0.315
+    },
+    {
+      "word": "if",
+      "start": 0.315,
+      "end": 0.631
+    },
+    {
+      "word": "Ginny",
+      "start": 0.631,
+      "end": 0.946
+    },
+    {
+      "word": "Weasley",
+      "start": 0.946,
+      "end": 1.262
+    },
+    {
+      "word": "had",
+      "start": 1.262,
+      "end": 1.577
+    },
+    {
+      "word": "chosen",
+      "start": 1.577,
+      "end": 1.893
+    },
+    {
+      "word": "Quidditch",
+      "start": 1.893,
+      "end": 2.208
+    },
+    {
+      "word": "over",
+      "start": 2.208,
+      "end": 2.524
+    },
+    {
+      "word": "romance",
+      "start": 2.524,
+      "end": 2.839
+    },
+    {
+      "word": "with",
+      "start": 2.839,
+      "end": 3.155
+    },
+    {
+      "word": "Harry?",
+      "start": 3.155,
+      "end": 3.47
+    }
+  ]
+}

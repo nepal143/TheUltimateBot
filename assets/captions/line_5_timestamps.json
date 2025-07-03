@@ -1,0 +1,74 @@
+{
+  "words": [
+    {
+      "word": "Black",
+      "start": 0.0,
+      "end": 0.299
+    },
+    {
+      "word": "Widow's",
+      "start": 0.299,
+      "end": 0.597
+    },
+    {
+      "word": "red",
+      "start": 0.597,
+      "end": 0.896
+    },
+    {
+      "word": "room",
+      "start": 0.896,
+      "end": 1.194
+    },
+    {
+      "word": "training",
+      "start": 1.194,
+      "end": 1.493
+    },
+    {
+      "word": "makes",
+      "start": 1.493,
+      "end": 1.791
+    },
+    {
+      "word": "Elektra's",
+      "start": 1.791,
+      "end": 2.09
+    },
+    {
+      "word": "look",
+      "start": 2.09,
+      "end": 2.389
+    },
+    {
+      "word": "like",
+      "start": 2.389,
+      "end": 2.687
+    },
+    {
+      "word": "a",
+      "start": 2.687,
+      "end": 2.986
+    },
+    {
+      "word": "walk",
+      "start": 2.986,
+      "end": 3.284
+    },
+    {
+      "word": "in",
+      "start": 3.284,
+      "end": 3.583
+    },
+    {
+      "word": "the",
+      "start": 3.583,
+      "end": 3.881
+    },
+    {
+      "word": "park.",
+      "start": 3.881,
+      "end": 4.18
+    }
+  ]
+}

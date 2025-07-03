@@ -1,0 +1,59 @@
+{
+  "words": [
+    {
+      "word": "Professor",
+      "start": 0.0,
+      "end": 0.387
+    },
+    {
+      "word": "McGonagall\u2019s",
+      "start": 0.387,
+      "end": 0.775
+    },
+    {
+      "word": "Animagus",
+      "start": 0.775,
+      "end": 1.162
+    },
+    {
+      "word": "form",
+      "start": 1.162,
+      "end": 1.549
+    },
+    {
+      "word": "might",
+      "start": 1.549,
+      "end": 1.936
+    },
+    {
+      "word": "be",
+      "start": 1.936,
+      "end": 2.324
+    },
+    {
+      "word": "the",
+      "start": 2.324,
+      "end": 2.711
+    },
+    {
+      "word": "most",
+      "start": 2.711,
+      "end": 3.098
+    },
+    {
+      "word": "underrated",
+      "start": 3.098,
+      "end": 3.485
+    },
+    {
+      "word": "in",
+      "start": 3.485,
+      "end": 3.873
+    },
+    {
+      "word": "Hogwarts.",
+      "start": 3.873,
+      "end": 4.26
+    }
+  ]
+}

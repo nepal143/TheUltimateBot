@@ -1,0 +1,84 @@
+{
+  "words": [
+    {
+      "word": "Could",
+      "start": 0.0,
+      "end": 0.325
+    },
+    {
+      "word": "Fred",
+      "start": 0.325,
+      "end": 0.65
+    },
+    {
+      "word": "&",
+      "start": 0.65,
+      "end": 0.975
+    },
+    {
+      "word": "George",
+      "start": 0.975,
+      "end": 1.3
+    },
+    {
+      "word": "have",
+      "start": 1.3,
+      "end": 1.625
+    },
+    {
+      "word": "captured",
+      "start": 1.625,
+      "end": 1.95
+    },
+    {
+      "word": "more",
+      "start": 1.95,
+      "end": 2.275
+    },
+    {
+      "word": "Death",
+      "start": 2.275,
+      "end": 2.6
+    },
+    {
+      "word": "Eaters",
+      "start": 2.6,
+      "end": 2.925
+    },
+    {
+      "word": "if",
+      "start": 2.925,
+      "end": 3.25
+    },
+    {
+      "word": "they",
+      "start": 3.25,
+      "end": 3.575
+    },
+    {
+      "word": "used",
+      "start": 3.575,
+      "end": 3.9
+    },
+    {
+      "word": "their",
+      "start": 3.9,
+      "end": 4.225
+    },
+    {
+      "word": "pitch-changing",
+      "start": 4.225,
+      "end": 4.55
+    },
+    {
+      "word": "formula",
+      "start": 4.55,
+      "end": 4.875
+    },
+    {
+      "word": "wisely?",
+      "start": 4.875,
+      "end": 5.2
+    }
+  ]
+}

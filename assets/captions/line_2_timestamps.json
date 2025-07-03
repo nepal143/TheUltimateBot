@@ -1,0 +1,84 @@
+{
+  "words": [
+    {
+      "word": "Let's",
+      "start": 0.0,
+      "end": 0.351
+    },
+    {
+      "word": "be",
+      "start": 0.351,
+      "end": 0.703
+    },
+    {
+      "word": "real...",
+      "start": 0.703,
+      "end": 1.054
+    },
+    {
+      "word": "Captain",
+      "start": 1.054,
+      "end": 1.405
+    },
+    {
+      "word": "America's",
+      "start": 1.405,
+      "end": 1.756
+    },
+    {
+      "word": "shield",
+      "start": 1.756,
+      "end": 2.107
+    },
+    {
+      "word": "shouldn't",
+      "start": 2.107,
+      "end": 2.459
+    },
+    {
+      "word": "be",
+      "start": 2.459,
+      "end": 2.81
+    },
+    {
+      "word": "his",
+      "start": 2.81,
+      "end": 3.161
+    },
+    {
+      "word": "signature",
+      "start": 3.161,
+      "end": 3.512
+    },
+    {
+      "word": "weapon.",
+      "start": 3.513,
+      "end": 3.864
+    },
+    {
+      "word": "Bring",
+      "start": 3.864,
+      "end": 4.215
+    },
+    {
+      "word": "on",
+      "start": 4.215,
+      "end": 4.566
+    },
+    {
+      "word": "the",
+      "start": 4.566,
+      "end": 4.918
+    },
+    {
+      "word": "vibranium",
+      "start": 4.918,
+      "end": 5.269
+    },
+    {
+      "word": "claws!",
+      "start": 5.269,
+      "end": 5.62
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "words": [
+    {
+      "word": "Ms.",
+      "start": 0.0,
+      "end": 0.314
+    },
+    {
+      "word": "Marvel",
+      "start": 0.314,
+      "end": 0.628
+    },
+    {
+      "word": "vs",
+      "start": 0.628,
+      "end": 0.942
+    },
+    {
+      "word": "She-Hulk:",
+      "start": 0.942,
+      "end": 1.255
+    },
+    {
+      "word": "Who'd",
+      "start": 1.255,
+      "end": 1.569
+    },
+    {
+      "word": "come",
+      "start": 1.569,
+      "end": 1.883
+    },
+    {
+      "word": "out",
+      "start": 1.883,
+      "end": 2.197
+    },
+    {
+      "word": "on",
+      "start": 2.197,
+      "end": 2.511
+    },
+    {
+      "word": "top",
+      "start": 2.511,
+      "end": 2.825
+    },
+    {
+      "word": "in",
+      "start": 2.825,
+      "end": 3.138
+    },
+    {
+      "word": "a",
+      "start": 3.138,
+      "end": 3.452
+    },
+    {
+      "word": "street",
+      "start": 3.452,
+      "end": 3.766
+    },
+    {
+      "word": "fight?",
+      "start": 3.766,
+      "end": 4.08
+    }
+  ]
+}
