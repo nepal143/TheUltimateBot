@@ -1,74 +1,54 @@
 {
   "words": [
     {
-      "word": "Elon",
+      "word": "John",
       "start": 0.0,
-      "end": 0.397
+      "end": 0.371
     },
     {
-      "word": "Musk",
-      "start": 0.397,
-      "end": 0.794
+      "word": "Cena",
+      "start": 0.371,
+      "end": 0.742
     },
     {
-      "word": "jumping",
-      "start": 0.794,
-      "end": 1.191
+      "word": "as",
+      "start": 0.742,
+      "end": 1.113
     },
     {
-      "word": "over",
-      "start": 1.191,
-      "end": 1.589
+      "word": "a",
+      "start": 1.113,
+      "end": 1.484
     },
     {
-      "word": "cars",
-      "start": 1.589,
-      "end": 1.986
+      "word": "Yu-Gi-Oh!",
+      "start": 1.484,
+      "end": 1.855
     },
     {
-      "word": "like",
-      "start": 1.986,
-      "end": 2.383
+      "word": "duelist?",
+      "start": 1.855,
+      "end": 2.226
     },
     {
-      "word": "One",
-      "start": 2.383,
-      "end": 2.78
+      "word": "Card",
+      "start": 2.226,
+      "end": 2.597
     },
     {
-      "word": "Punch",
-      "start": 2.78,
-      "end": 3.177
+      "word": "draw",
+      "start": 2.597,
+      "end": 2.968
     },
     {
-      "word": "Man?",
-      "start": 3.177,
-      "end": 3.574
+      "word": "speed",
+      "start": 2.968,
+      "end": 3.339
     },
     {
-      "word": "SpaceX",
-      "start": 3.574,
-      "end": 3.971
-    },
-    {
-      "word": "contractors",
-      "start": 3.971,
-      "end": 4.369
-    },
-    {
-      "word": "better",
-      "start": 4.369,
-      "end": 4.766
-    },
-    {
-      "word": "watch",
-      "start": 4.766,
-      "end": 5.163
-    },
-    {
-      "word": "out!",
-      "start": 5.163,
-      "end": 5.56
+      "word": "unmatched!",
+      "start": 3.339,
+      "end": 3.71
     }
   ]
 }

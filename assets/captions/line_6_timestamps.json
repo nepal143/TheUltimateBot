@@ -1,64 +1,54 @@
 {
   "words": [
     {
-      "word": "With",
+      "word": "Could",
       "start": 0.0,
-      "end": 0.403
+      "end": 0.431
     },
     {
-      "word": "Mob",
-      "start": 0.403,
-      "end": 0.805
+      "word": "John",
+      "start": 0.431,
+      "end": 0.862
     },
     {
-      "word": "Psycho",
-      "start": 0.805,
-      "end": 1.208
+      "word": "Cena's",
+      "start": 0.862,
+      "end": 1.293
     },
     {
-      "word": "100's",
-      "start": 1.208,
-      "end": 1.61
+      "word": "power",
+      "start": 1.293,
+      "end": 1.724
     },
     {
-      "word": "psychic",
-      "start": 1.61,
-      "end": 2.013
+      "word": "rival",
+      "start": 1.724,
+      "end": 2.155
     },
     {
-      "word": "powers,",
-      "start": 2.013,
-      "end": 2.415
+      "word": "Goku's",
+      "start": 2.155,
+      "end": 2.586
     },
     {
-      "word": "Elon",
-      "start": 2.415,
-      "end": 2.817
+      "word": "Ultra",
+      "start": 2.586,
+      "end": 3.017
     },
     {
-      "word": "could",
-      "start": 2.818,
-      "end": 3.22
+      "word": "Instinct?",
+      "start": 3.017,
+      "end": 3.448
     },
     {
-      "word": "make",
-      "start": 3.22,
-      "end": 3.623
+      "word": "That's",
+      "start": 3.448,
+      "end": 3.879
     },
     {
-      "word": "Tesla",
-      "start": 3.623,
-      "end": 4.025
-    },
-    {
-      "word": "cars",
-      "start": 4.025,
-      "end": 4.428
-    },
-    {
-      "word": "immortal!",
-      "start": 4.428,
-      "end": 4.83
+      "word": "debateable!",
+      "start": 3.879,
+      "end": 4.31
     }
   ]
 }

@@ -3,82 +3,77 @@
     {
       "word": "Let's",
       "start": 0.0,
-      "end": 0.315
+      "end": 0.319
     },
     {
       "word": "be",
-      "start": 0.315,
-      "end": 0.63
+      "start": 0.319,
+      "end": 0.637
     },
     {
-      "word": "real...",
-      "start": 0.63,
-      "end": 0.945
+      "word": "real,",
+      "start": 0.637,
+      "end": 0.956
     },
     {
-      "word": "If",
-      "start": 0.945,
-      "end": 1.26
+      "word": "John",
+      "start": 0.956,
+      "end": 1.275
     },
     {
-      "word": "Elon",
-      "start": 1.26,
-      "end": 1.575
+      "word": "Cena",
+      "start": 1.275,
+      "end": 1.593
     },
     {
-      "word": "Musk",
-      "start": 1.575,
-      "end": 1.89
+      "word": "would",
+      "start": 1.593,
+      "end": 1.912
     },
     {
-      "word": "had",
-      "start": 1.89,
-      "end": 2.205
+      "word": "be",
+      "start": 1.912,
+      "end": 2.231
     },
     {
       "word": "a",
-      "start": 2.205,
-      "end": 2.52
+      "start": 2.231,
+      "end": 2.549
     },
     {
-      "word": "Demon",
-      "start": 2.52,
-      "end": 2.835
-    },
-    {
-      "word": "Slayer",
-      "start": 2.835,
-      "end": 3.15
-    },
-    {
-      "word": "mark,",
-      "start": 3.15,
-      "end": 3.465
-    },
-    {
-      "word": "he'd",
-      "start": 3.465,
-      "end": 3.78
-    },
-    {
-      "word": "slay",
-      "start": 3.78,
-      "end": 4.095
-    },
-    {
-      "word": "bureaucracy",
-      "start": 4.095,
-      "end": 4.41
+      "word": "beast",
+      "start": 2.549,
+      "end": 2.868
     },
     {
       "word": "in",
-      "start": 4.41,
-      "end": 4.725
+      "start": 2.868,
+      "end": 3.187
     },
     {
-      "word": "minutes.",
-      "start": 4.725,
-      "end": 5.04
+      "word": "the",
+      "start": 3.187,
+      "end": 3.505
+    },
+    {
+      "word": "WWE",
+      "start": 3.505,
+      "end": 3.824
+    },
+    {
+      "word": "vs",
+      "start": 3.824,
+      "end": 4.143
+    },
+    {
+      "word": "Naruto's",
+      "start": 4.143,
+      "end": 4.461
+    },
+    {
+      "word": "Kakashi!",
+      "start": 4.461,
+      "end": 4.78
     }
   ]
 }

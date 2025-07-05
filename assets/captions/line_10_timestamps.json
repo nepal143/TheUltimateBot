@@ -1,79 +1,79 @@
 {
   "words": [
     {
-      "word": "Elon",
+      "word": "Agree",
       "start": 0.0,
-      "end": 0.371
+      "end": 0.324
     },
     {
-      "word": "Musk",
-      "start": 0.371,
-      "end": 0.741
+      "word": "or",
+      "start": 0.324,
+      "end": 0.648
     },
     {
-      "word": "with",
-      "start": 0.741,
-      "end": 1.112
+      "word": "nah?",
+      "start": 0.648,
+      "end": 0.972
     },
     {
-      "word": "My",
-      "start": 1.112,
-      "end": 1.483
+      "word": "John",
+      "start": 0.972,
+      "end": 1.296
     },
     {
-      "word": "Hero",
-      "start": 1.483,
-      "end": 1.853
+      "word": "Cena",
+      "start": 1.296,
+      "end": 1.62
     },
     {
-      "word": "Academia's",
-      "start": 1.853,
-      "end": 2.224
+      "word": "could",
+      "start": 1.62,
+      "end": 1.944
     },
     {
-      "word": "Quirk?",
-      "start": 2.224,
-      "end": 2.595
+      "word": "give",
+      "start": 1.944,
+      "end": 2.268
     },
     {
-      "word": "Tesla",
-      "start": 2.595,
-      "end": 2.965
+      "word": "Final",
+      "start": 2.268,
+      "end": 2.592
     },
     {
-      "word": "cars",
-      "start": 2.965,
-      "end": 3.336
+      "word": "Fantasy's",
+      "start": 2.592,
+      "end": 2.916
     },
     {
-      "word": "would",
-      "start": 3.336,
-      "end": 3.707
+      "word": "Sephiroth",
+      "start": 2.916,
+      "end": 3.24
     },
     {
-      "word": "fly",
-      "start": 3.707,
-      "end": 4.077
+      "word": "a",
+      "start": 3.24,
+      "end": 3.564
     },
     {
-      "word": "and",
-      "start": 4.077,
-      "end": 4.448
+      "word": "run",
+      "start": 3.564,
+      "end": 3.888
     },
     {
-      "word": "sell",
-      "start": 4.448,
-      "end": 4.819
+      "word": "for",
+      "start": 3.888,
+      "end": 4.212
     },
     {
-      "word": "like",
-      "start": 4.819,
-      "end": 5.189
+      "word": "his",
+      "start": 4.212,
+      "end": 4.536
     },
     {
-      "word": "hotcakes!",
-      "start": 5.189,
-      "end": 5.56
+      "word": "money!",
+      "start": 4.536,
+      "end": 4.86
     }
   ]
 }

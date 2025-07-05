@@ -3,72 +3,47 @@
     {
       "word": "Imagine",
       "start": 0.0,
-      "end": 0.394
+      "end": 0.386
     },
     {
       "word": "if",
-      "start": 0.394,
-      "end": 0.787
+      "start": 0.386,
+      "end": 0.771
     },
     {
-      "word": "Elon",
-      "start": 0.787,
-      "end": 1.181
+      "word": "John",
+      "start": 0.771,
+      "end": 1.157
     },
     {
-      "word": "Musk",
-      "start": 1.181,
-      "end": 1.574
+      "word": "Cena",
+      "start": 1.157,
+      "end": 1.542
     },
     {
-      "word": "was",
-      "start": 1.574,
-      "end": 1.968
+      "word": "became",
+      "start": 1.542,
+      "end": 1.928
     },
     {
-      "word": "a",
-      "start": 1.968,
-      "end": 2.361
+      "word": "an",
+      "start": 1.928,
+      "end": 2.313
     },
     {
-      "word": "cybernetic",
-      "start": 2.361,
-      "end": 2.755
+      "word": "Assassin's",
+      "start": 2.313,
+      "end": 2.699
     },
     {
-      "word": "organism",
-      "start": 2.755,
-      "end": 3.149
+      "word": "Creed's",
+      "start": 2.699,
+      "end": 3.084
     },
     {
-      "word": "like",
-      "start": 3.149,
-      "end": 3.542
-    },
-    {
-      "word": "Alien",
-      "start": 3.542,
-      "end": 3.936
-    },
-    {
-      "word": "from",
-      "start": 3.936,
-      "end": 4.329
-    },
-    {
-      "word": "Gundam.",
-      "start": 4.329,
-      "end": 4.723
-    },
-    {
-      "word": "Game",
-      "start": 4.723,
-      "end": 5.116
-    },
-    {
-      "word": "changer!",
-      "start": 5.116,
-      "end": 5.51
+      "word": "Assassin!",
+      "start": 3.084,
+      "end": 3.47
     }
   ]
 }
