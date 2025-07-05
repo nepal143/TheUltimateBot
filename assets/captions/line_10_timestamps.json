@@ -1,59 +1,39 @@
 {
   "words": [
     {
-      "word": "HUNT",
+      "word": "Nnoitra's",
       "start": 0.0,
-      "end": 0.348
+      "end": 0.53
     },
     {
-      "word": "starts",
-      "start": 0.348,
-      "end": 0.696
+      "word": "fraccion",
+      "start": 0.53,
+      "end": 1.06
     },
     {
-      "word": "getting",
-      "start": 0.696,
-      "end": 1.045
+      "word": "Zanpakuto",
+      "start": 1.06,
+      "end": 1.59
     },
     {
-      "word": "interesting",
-      "start": 1.045,
-      "end": 1.393
+      "word": "outclasses",
+      "start": 1.59,
+      "end": 2.12
     },
     {
-      "word": "when",
-      "start": 1.393,
-      "end": 1.741
+      "word": "his",
+      "start": 2.12,
+      "end": 2.65
     },
     {
-      "word": "they",
-      "start": 1.741,
-      "end": 2.089
+      "word": "estera",
+      "start": 2.65,
+      "end": 3.18
     },
     {
-      "word": "face",
-      "start": 2.089,
-      "end": 2.437
-    },
-    {
-      "word": "the",
-      "start": 2.437,
-      "end": 2.785
-    },
-    {
-      "word": "Seven",
-      "start": 2.785,
-      "end": 3.134
-    },
-    {
-      "word": "Deadly",
-      "start": 3.134,
-      "end": 3.482
-    },
-    {
-      "word": "Sins!",
-      "start": 3.482,
-      "end": 3.83
+      "word": "granta.",
+      "start": 3.18,
+      "end": 3.71
     }
   ]
 }

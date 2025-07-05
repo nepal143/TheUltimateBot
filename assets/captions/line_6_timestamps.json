@@ -1,59 +1,44 @@
 {
   "words": [
     {
-      "word": "Hercule's",
+      "word": "Toshiro",
       "start": 0.0,
-      "end": 0.38
+      "end": 0.383
     },
     {
-      "word": "Strength",
-      "start": 0.38,
-      "end": 0.76
+      "word": "Hitsugaya's",
+      "start": 0.383,
+      "end": 0.765
     },
     {
-      "word": "is",
-      "start": 0.76,
-      "end": 1.14
+      "word": "ice",
+      "start": 0.765,
+      "end": 1.147
     },
     {
-      "word": "overrated,",
-      "start": 1.14,
-      "end": 1.52
+      "word": "powers",
+      "start": 1.147,
+      "end": 1.53
     },
     {
-      "word": "give",
-      "start": 1.52,
-      "end": 1.9
+      "word": "are",
+      "start": 1.53,
+      "end": 1.913
     },
     {
-      "word": "me",
-      "start": 1.9,
-      "end": 2.28
+      "word": "a",
+      "start": 1.913,
+      "end": 2.295
     },
     {
-      "word": "Hawks",
-      "start": 2.28,
-      "end": 2.66
+      "word": "bit",
+      "start": 2.295,
+      "end": 2.677
     },
     {
-      "word": "or",
-      "start": 2.66,
-      "end": 3.04
-    },
-    {
-      "word": "Gouketsu",
-      "start": 3.04,
-      "end": 3.42
-    },
-    {
-      "word": "any",
-      "start": 3.42,
-      "end": 3.8
-    },
-    {
-      "word": "day.",
-      "start": 3.8,
-      "end": 4.18
+      "word": "overrated.",
+      "start": 2.678,
+      "end": 3.06
     }
   ]
 }

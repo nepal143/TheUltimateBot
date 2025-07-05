@@ -1,54 +1,39 @@
 {
   "words": [
     {
-      "word": "Gowther's",
+      "word": "Rukia's",
       "start": 0.0,
-      "end": 0.412
+      "end": 0.47
     },
     {
-      "word": "dilemma:",
-      "start": 0.412,
-      "end": 0.824
+      "word": "resurreccion",
+      "start": 0.47,
+      "end": 0.94
     },
     {
-      "word": "to",
-      "start": 0.824,
-      "end": 1.236
+      "word": "is",
+      "start": 0.94,
+      "end": 1.41
     },
     {
-      "word": "love",
-      "start": 1.236,
-      "end": 1.648
+      "word": "arguably",
+      "start": 1.41,
+      "end": 1.88
     },
     {
-      "word": "or",
-      "start": 1.648,
-      "end": 2.06
+      "word": "the",
+      "start": 1.88,
+      "end": 2.35
     },
     {
-      "word": "not",
-      "start": 2.06,
-      "end": 2.472
+      "word": "most",
+      "start": 2.35,
+      "end": 2.82
     },
     {
-      "word": "to",
-      "start": 2.472,
-      "end": 2.884
-    },
-    {
-      "word": "love...",
-      "start": 2.884,
-      "end": 3.296
-    },
-    {
-      "word": "it's",
-      "start": 3.296,
-      "end": 3.708
-    },
-    {
-      "word": "exhausting.",
-      "start": 3.708,
-      "end": 4.12
+      "word": "underrated.",
+      "start": 2.82,
+      "end": 3.29
     }
   ]
 }

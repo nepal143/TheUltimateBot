@@ -3,47 +3,42 @@
     {
       "word": "Imagine",
       "start": 0.0,
-      "end": 0.372
+      "end": 0.421
     },
     {
       "word": "if",
-      "start": 0.372,
-      "end": 0.744
+      "start": 0.421,
+      "end": 0.843
     },
     {
-      "word": "Ban",
-      "start": 0.744,
-      "end": 1.117
+      "word": "Soifon's",
+      "start": 0.843,
+      "end": 1.264
     },
     {
-      "word": "had",
-      "start": 1.117,
-      "end": 1.489
+      "word": "shield",
+      "start": 1.264,
+      "end": 1.685
     },
     {
-      "word": "Diane's",
-      "start": 1.489,
-      "end": 1.861
+      "word": "blocked",
+      "start": 1.685,
+      "end": 2.106
     },
     {
-      "word": "strength",
-      "start": 1.861,
-      "end": 2.233
+      "word": "Ichigo's",
+      "start": 2.106,
+      "end": 2.528
     },
     {
-      "word": "and",
-      "start": 2.233,
-      "end": 2.606
+      "word": "Getsuga",
+      "start": 2.527,
+      "end": 2.949
     },
     {
-      "word": "Elaine's",
-      "start": 2.606,
-      "end": 2.978
-    },
-    {
-      "word": "beauty.",
-      "start": 2.978,
-      "end": 3.35
+      "word": "Tensho.",
+      "start": 2.949,
+      "end": 3.37
     }
   ]
 }

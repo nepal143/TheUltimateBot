@@ -1,54 +1,39 @@
 {
   "words": [
     {
-      "word": "Diane's",
+      "word": "Orihime's",
       "start": 0.0,
-      "end": 0.342
+      "end": 0.437
     },
     {
-      "word": "Troll",
-      "start": 0.342,
-      "end": 0.684
+      "word": "healing",
+      "start": 0.437,
+      "end": 0.874
     },
     {
-      "word": "form",
-      "start": 0.684,
-      "end": 1.026
+      "word": "should've",
+      "start": 0.874,
+      "end": 1.311
     },
     {
-      "word": "should",
-      "start": 1.026,
-      "end": 1.368
-    },
-    {
-      "word": "be",
-      "start": 1.368,
-      "end": 1.71
+      "word": "been",
+      "start": 1.311,
+      "end": 1.749
     },
     {
       "word": "used",
-      "start": 1.71,
-      "end": 2.052
+      "start": 1.749,
+      "end": 2.186
     },
     {
       "word": "more",
-      "start": 2.052,
-      "end": 2.394
+      "start": 2.186,
+      "end": 2.623
     },
     {
-      "word": "often",
-      "start": 2.394,
-      "end": 2.736
-    },
-    {
-      "word": "in",
-      "start": 2.736,
-      "end": 3.078
-    },
-    {
-      "word": "battles.",
-      "start": 3.078,
-      "end": 3.42
+      "word": "strategically.",
+      "start": 2.623,
+      "end": 3.06
     }
   ]
 }

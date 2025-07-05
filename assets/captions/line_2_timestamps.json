@@ -3,67 +3,47 @@
     {
       "word": "Let's",
       "start": 0.0,
-      "end": 0.426
+      "end": 0.432
     },
     {
       "word": "be",
-      "start": 0.426,
-      "end": 0.852
+      "start": 0.432,
+      "end": 0.864
     },
     {
       "word": "real,",
-      "start": 0.852,
-      "end": 1.278
+      "start": 0.864,
+      "end": 1.297
     },
     {
-      "word": "Leif",
-      "start": 1.278,
-      "end": 1.705
+      "word": "Yoruichi",
+      "start": 1.297,
+      "end": 1.729
     },
     {
-      "word": "Ericsson's",
-      "start": 1.705,
-      "end": 2.131
+      "word": "outclasses",
+      "start": 1.729,
+      "end": 2.161
     },
     {
-      "word": "true",
-      "start": 2.131,
-      "end": 2.557
+      "word": "every",
+      "start": 2.161,
+      "end": 2.593
     },
     {
-      "word": "power",
-      "start": 2.557,
-      "end": 2.983
+      "word": "captain",
+      "start": 2.593,
+      "end": 3.026
     },
     {
-      "word": "is",
-      "start": 2.983,
-      "end": 3.409
+      "word": "in",
+      "start": 3.026,
+      "end": 3.458
     },
     {
-      "word": "his",
-      "start": 3.409,
-      "end": 3.835
-    },
-    {
-      "word": "navigation",
-      "start": 3.835,
-      "end": 4.262
-    },
-    {
-      "word": "skill,",
-      "start": 4.262,
-      "end": 4.688
-    },
-    {
-      "word": "not",
-      "start": 4.688,
-      "end": 5.114
-    },
-    {
-      "word": "combat.",
-      "start": 5.114,
-      "end": 5.54
+      "word": "speed.",
+      "start": 3.458,
+      "end": 3.89
     }
   ]
 }

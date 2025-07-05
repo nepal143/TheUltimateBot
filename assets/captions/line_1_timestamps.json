@@ -3,52 +3,47 @@
     {
       "word": "Hot",
       "start": 0.0,
-      "end": 0.383
+      "end": 0.438
     },
     {
       "word": "take:",
-      "start": 0.383,
-      "end": 0.766
+      "start": 0.438,
+      "end": 0.876
     },
     {
-      "word": "Thorfinn",
-      "start": 0.766,
-      "end": 1.149
+      "word": "Ichigo's",
+      "start": 0.876,
+      "end": 1.313
     },
     {
-      "word": "without",
-      "start": 1.149,
-      "end": 1.532
+      "word": "bankai",
+      "start": 1.313,
+      "end": 1.751
     },
     {
-      "word": "Canute",
-      "start": 1.532,
-      "end": 1.915
+      "word": "could've",
+      "start": 1.751,
+      "end": 2.189
     },
     {
-      "word": "is",
-      "start": 1.915,
-      "end": 2.298
+      "word": "held",
+      "start": 2.189,
+      "end": 2.627
     },
     {
-      "word": "just",
-      "start": 2.298,
-      "end": 2.681
-    },
-    {
-      "word": "a",
-      "start": 2.681,
+      "word": "back",
+      "start": 2.627,
       "end": 3.064
     },
     {
-      "word": "lost",
+      "word": "Aizen's",
       "start": 3.064,
-      "end": 3.447
+      "end": 3.502
     },
     {
-      "word": "Viking.",
-      "start": 3.447,
-      "end": 3.83
+      "word": "espada.",
+      "start": 3.502,
+      "end": 3.94
     }
   ]
 }

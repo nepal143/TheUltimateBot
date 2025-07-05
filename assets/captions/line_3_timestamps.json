@@ -3,37 +3,52 @@
     {
       "word": "What",
       "start": 0.0,
-      "end": 0.377
+      "end": 0.413
     },
     {
       "word": "if",
-      "start": 0.377,
-      "end": 0.754
+      "start": 0.413,
+      "end": 0.826
     },
     {
-      "word": "Merlin",
-      "start": 0.754,
-      "end": 1.131
+      "word": "Ulquiorra",
+      "start": 0.826,
+      "end": 1.239
     },
     {
-      "word": "had",
-      "start": 1.131,
-      "end": 1.509
+      "word": "skipped",
+      "start": 1.239,
+      "end": 1.652
     },
     {
       "word": "the",
-      "start": 1.509,
-      "end": 1.886
+      "start": 1.652,
+      "end": 2.065
     },
     {
-      "word": "Commandments",
-      "start": 1.886,
-      "end": 2.263
+      "word": "Hogyoku",
+      "start": 2.065,
+      "end": 2.478
     },
     {
-      "word": "powers?!",
-      "start": 2.263,
-      "end": 2.64
+      "word": "and",
+      "start": 2.478,
+      "end": 2.891
+    },
+    {
+      "word": "went",
+      "start": 2.891,
+      "end": 3.304
+    },
+    {
+      "word": "full-power",
+      "start": 3.304,
+      "end": 3.717
+    },
+    {
+      "word": "Arrancar?",
+      "start": 3.717,
+      "end": 4.13
     }
   ]
 }
