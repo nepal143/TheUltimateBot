@@ -3,72 +3,37 @@
     {
       "word": "Agree",
       "start": 0.0,
-      "end": 0.354
+      "end": 0.264
     },
     {
       "word": "or",
-      "start": 0.354,
-      "end": 0.709
+      "start": 0.264,
+      "end": 0.529
     },
     {
       "word": "nah?",
-      "start": 0.709,
-      "end": 1.063
+      "start": 0.529,
+      "end": 0.793
     },
     {
-      "word": "Elon",
-      "start": 1.063,
-      "end": 1.417
+      "word": "Kira",
+      "start": 0.793,
+      "end": 1.057
     },
     {
-      "word": "Musk",
-      "start": 1.417,
-      "end": 1.771
+      "word": "is",
+      "start": 1.057,
+      "end": 1.321
     },
     {
-      "word": "in",
-      "start": 1.771,
-      "end": 2.126
+      "word": "a",
+      "start": 1.321,
+      "end": 1.586
     },
     {
-      "word": "Attack",
-      "start": 2.126,
-      "end": 2.48
-    },
-    {
-      "word": "on",
-      "start": 2.48,
-      "end": 2.834
-    },
-    {
-      "word": "Titan's",
-      "start": 2.834,
-      "end": 3.189
-    },
-    {
-      "word": "armor",
-      "start": 3.189,
-      "end": 3.543
-    },
-    {
-      "word": "would",
-      "start": 3.543,
-      "end": 3.897
-    },
-    {
-      "word": "crush",
-      "start": 3.897,
-      "end": 4.251
-    },
-    {
-      "word": "colossal",
-      "start": 4.251,
-      "end": 4.606
-    },
-    {
-      "word": "tasks!",
-      "start": 4.606,
-      "end": 4.96
+      "word": "hero!",
+      "start": 1.586,
+      "end": 1.85
     }
   ]
 }

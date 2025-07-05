@@ -4,6 +4,9 @@ import random
 from elevenlabs import generate, save, set_api_key, voices
 from dotenv import load_dotenv
 
+# 🔁 Import fallback
+from fallback_tts import fallback_generate_voiceover
+
 load_dotenv()
 
 API_KEYS = os.getenv("ELEVENLABS_API_KEYS", "").split(",")
@@ -15,7 +18,7 @@ if not API_KEYS:
 PREFERRED_VOICES = ["Rachel", "Josh", "Clyde", "Adam", "George", "Callum", "Charlotte"]
 
 def get_valid_voice(preferred_list=PREFERRED_VOICES):
-    random.shuffle(API_KEYS)  # Shuffle for random rotation
+    random.shuffle(API_KEYS)
     for key in API_KEYS:
         try:
             print(f"🔑 Trying key: {key[:6]}...")
@@ -29,44 +32,48 @@ def get_valid_voice(preferred_list=PREFERRED_VOICES):
                     return preferred, key
         except Exception as e:
             print(f"⚠️ Voice fetch failed with key {key[:6]}...: {e}")
-            time.sleep(random.uniform(10, 20))  # Random pause before trying next key
+            time.sleep(random.uniform(10, 20))
     raise Exception("❌ No valid voice found with any API key.")
 
 def generate_voiceover(script_data, voice=None):
     os.makedirs("assets/audio/lines", exist_ok=True)
-    preferred_list = [voice] + PREFERRED_VOICES if voice else PREFERRED_VOICES
-    valid_voice, working_key = get_valid_voice(preferred_list)
 
-    for idx, item in enumerate(script_data):
-        sentence = item["sentence"]
-        line_path = f"assets/audio/lines/line_{idx + 1}.mp3"
-        print(f"\n📄 Processing line {idx + 1}: '{sentence}'")
+    try:
+        preferred_list = [voice] + PREFERRED_VOICES if voice else PREFERRED_VOICES
+        valid_voice, working_key = get_valid_voice(preferred_list)
 
-        keys_to_try = [working_key] + [k for k in API_KEYS if k != working_key]
-        random.shuffle(keys_to_try)  # Add randomness to rotation
+        for idx, item in enumerate(script_data):
+            sentence = item["sentence"]
+            line_path = f"assets/audio/lines/line_{idx + 1}.mp3"
+            print(f"\n📄 Processing line {idx + 1}: '{sentence}'")
 
-        success = False
-        for api_key in keys_to_try:
-            try:
-                set_api_key(api_key)
-                print(f"🎤 Using key {api_key[:6]}...")
+            keys_to_try = [working_key] + [k for k in API_KEYS if k != working_key]
+            random.shuffle(keys_to_try)
 
-                audio = generate(text=sentence, voice=valid_voice, model="eleven_monolingual_v1")
-                save(audio, line_path)
+            success = False
+            for api_key in keys_to_try:
+                try:
+                    set_api_key(api_key)
+                    print(f"🎤 Using key {api_key[:6]}...")
 
-                print(f"✅ Line {idx + 1} saved to: {line_path}")
-                success = True
+                    audio = generate(text=sentence, voice=valid_voice, model="eleven_monolingual_v1")
+                    save(audio, line_path)
 
-                # Simulate human pace
-                time.sleep(random.uniform(2, 5))
-                break
-            except Exception as e:
-                print(f"❌ Key {api_key[:6]} failed: {e}")
-                # Longer pause on failure to avoid pattern detection
-                time.sleep(random.uniform(10, 25))
+                    print(f"✅ Line {idx + 1} saved to: {line_path}")
+                    success = True
+                    time.sleep(random.uniform(2, 5))
+                    break
+                except Exception as e:
+                    print(f"❌ Key {api_key[:6]} failed: {e}")
+                    time.sleep(random.uniform(10, 25))
 
-        if not success:
-            print(f"🚫 Skipped line {idx + 1} — all keys failed.")
+            if not success:
+                print(f"🚫 Skipped line {idx + 1} — all keys failed.")
+                raise Exception("🛑 ElevenLabs failed for this line.")
 
-# Example usage
+    except Exception as e:
+        print(f"\n⚠️ ElevenLabs voiceover failed: {e}")
+        fallback_generate_voiceover(script_data)
+
+# Example usage:
 # generate_voiceover([{"sentence": "Hello world!"}, {"sentence": "This is another line."}])

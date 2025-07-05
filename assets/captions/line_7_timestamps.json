@@ -1,54 +1,54 @@
 {
   "words": [
     {
-      "word": "John",
+      "word": "Gowther's",
       "start": 0.0,
-      "end": 0.371
+      "end": 0.412
     },
     {
-      "word": "Cena",
-      "start": 0.371,
-      "end": 0.742
+      "word": "dilemma:",
+      "start": 0.412,
+      "end": 0.824
     },
     {
-      "word": "as",
-      "start": 0.742,
-      "end": 1.113
+      "word": "to",
+      "start": 0.824,
+      "end": 1.236
     },
     {
-      "word": "a",
-      "start": 1.113,
-      "end": 1.484
+      "word": "love",
+      "start": 1.236,
+      "end": 1.648
     },
     {
-      "word": "Yu-Gi-Oh!",
-      "start": 1.484,
-      "end": 1.855
+      "word": "or",
+      "start": 1.648,
+      "end": 2.06
     },
     {
-      "word": "duelist?",
-      "start": 1.855,
-      "end": 2.226
+      "word": "not",
+      "start": 2.06,
+      "end": 2.472
     },
     {
-      "word": "Card",
-      "start": 2.226,
-      "end": 2.597
+      "word": "to",
+      "start": 2.472,
+      "end": 2.884
     },
     {
-      "word": "draw",
-      "start": 2.597,
-      "end": 2.968
+      "word": "love...",
+      "start": 2.884,
+      "end": 3.296
     },
     {
-      "word": "speed",
-      "start": 2.968,
-      "end": 3.339
+      "word": "it's",
+      "start": 3.296,
+      "end": 3.708
     },
     {
-      "word": "unmatched!",
-      "start": 3.339,
-      "end": 3.71
+      "word": "exhausting.",
+      "start": 3.708,
+      "end": 4.12
     }
   ]
 }

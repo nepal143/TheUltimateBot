@@ -1,59 +1,54 @@
 {
   "words": [
     {
-      "word": "John",
+      "word": "Diane's",
       "start": 0.0,
-      "end": 0.345
+      "end": 0.342
     },
     {
-      "word": "Cena's",
-      "start": 0.345,
-      "end": 0.689
+      "word": "Troll",
+      "start": 0.342,
+      "end": 0.684
     },
     {
-      "word": "finishing",
-      "start": 0.689,
-      "end": 1.034
+      "word": "form",
+      "start": 0.684,
+      "end": 1.026
     },
     {
-      "word": "move",
-      "start": 1.034,
-      "end": 1.378
-    },
-    {
-      "word": "would",
-      "start": 1.378,
-      "end": 1.723
+      "word": "should",
+      "start": 1.026,
+      "end": 1.368
     },
     {
       "word": "be",
-      "start": 1.723,
-      "end": 2.067
+      "start": 1.368,
+      "end": 1.71
     },
     {
-      "word": "deadly",
-      "start": 2.067,
-      "end": 2.412
+      "word": "used",
+      "start": 1.71,
+      "end": 2.052
+    },
+    {
+      "word": "more",
+      "start": 2.052,
+      "end": 2.394
+    },
+    {
+      "word": "often",
+      "start": 2.394,
+      "end": 2.736
     },
     {
       "word": "in",
-      "start": 2.412,
-      "end": 2.756
+      "start": 2.736,
+      "end": 3.078
     },
     {
-      "word": "Street",
-      "start": 2.756,
-      "end": 3.101
-    },
-    {
-      "word": "Fighter",
-      "start": 3.101,
-      "end": 3.445
-    },
-    {
-      "word": "tournaments!",
-      "start": 3.445,
-      "end": 3.79
+      "word": "battles.",
+      "start": 3.078,
+      "end": 3.42
     }
   ]
 }

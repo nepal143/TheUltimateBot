@@ -1,74 +1,59 @@
 {
   "words": [
     {
-      "word": "John",
+      "word": "King's",
       "start": 0.0,
-      "end": 0.42
+      "end": 0.339
     },
     {
-      "word": "Cena",
-      "start": 0.42,
-      "end": 0.84
+      "word": "'King's",
+      "start": 0.339,
+      "end": 0.678
     },
     {
-      "word": "vs",
-      "start": 0.84,
-      "end": 1.26
+      "word": "Knight'",
+      "start": 0.678,
+      "end": 1.017
     },
     {
-      "word": "Death",
-      "start": 1.26,
-      "end": 1.68
+      "word": "formation",
+      "start": 1.017,
+      "end": 1.356
     },
     {
-      "word": "Note's",
-      "start": 1.68,
-      "end": 2.1
+      "word": "is",
+      "start": 1.356,
+      "end": 1.695
     },
     {
-      "word": "Light",
-      "start": 2.1,
-      "end": 2.52
+      "word": "nothing",
+      "start": 1.695,
+      "end": 2.035
     },
     {
-      "word": "Yagami:",
-      "start": 2.52,
-      "end": 2.94
-    },
-    {
-      "word": "A",
-      "start": 2.94,
-      "end": 3.36
-    },
-    {
-      "word": "wrestling",
-      "start": 3.36,
-      "end": 3.78
-    },
-    {
-      "word": "match",
-      "start": 3.78,
-      "end": 4.2
+      "word": "compared",
+      "start": 2.035,
+      "end": 2.374
     },
     {
       "word": "to",
-      "start": 4.2,
-      "end": 4.62
+      "start": 2.374,
+      "end": 2.713
     },
     {
-      "word": "decide",
-      "start": 4.62,
-      "end": 5.04
+      "word": "Hawk's",
+      "start": 2.713,
+      "end": 3.052
     },
     {
-      "word": "universe",
-      "start": 5.04,
-      "end": 5.46
+      "word": "'Hawk",
+      "start": 3.052,
+      "end": 3.391
     },
     {
-      "word": "ruler?",
-      "start": 5.46,
-      "end": 5.88
+      "word": "Eyes').",
+      "start": 3.391,
+      "end": 3.73
     }
   ]
 }

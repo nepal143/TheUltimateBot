@@ -1,54 +1,59 @@
 {
   "words": [
     {
-      "word": "Could",
+      "word": "Hercule's",
       "start": 0.0,
-      "end": 0.431
+      "end": 0.38
     },
     {
-      "word": "John",
-      "start": 0.431,
-      "end": 0.862
+      "word": "Strength",
+      "start": 0.38,
+      "end": 0.76
     },
     {
-      "word": "Cena's",
-      "start": 0.862,
-      "end": 1.293
+      "word": "is",
+      "start": 0.76,
+      "end": 1.14
     },
     {
-      "word": "power",
-      "start": 1.293,
-      "end": 1.724
+      "word": "overrated,",
+      "start": 1.14,
+      "end": 1.52
     },
     {
-      "word": "rival",
-      "start": 1.724,
-      "end": 2.155
+      "word": "give",
+      "start": 1.52,
+      "end": 1.9
     },
     {
-      "word": "Goku's",
-      "start": 2.155,
-      "end": 2.586
+      "word": "me",
+      "start": 1.9,
+      "end": 2.28
     },
     {
-      "word": "Ultra",
-      "start": 2.586,
-      "end": 3.017
+      "word": "Hawks",
+      "start": 2.28,
+      "end": 2.66
     },
     {
-      "word": "Instinct?",
-      "start": 3.017,
-      "end": 3.448
+      "word": "or",
+      "start": 2.66,
+      "end": 3.04
     },
     {
-      "word": "That's",
-      "start": 3.448,
-      "end": 3.879
+      "word": "Gouketsu",
+      "start": 3.04,
+      "end": 3.42
     },
     {
-      "word": "debateable!",
-      "start": 3.879,
-      "end": 4.31
+      "word": "any",
+      "start": 3.42,
+      "end": 3.8
+    },
+    {
+      "word": "day.",
+      "start": 3.8,
+      "end": 4.18
     }
   ]
 }

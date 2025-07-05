@@ -3,77 +3,52 @@
     {
       "word": "Hot",
       "start": 0.0,
-      "end": 0.312
+      "end": 0.383
     },
     {
       "word": "take:",
-      "start": 0.312,
-      "end": 0.624
+      "start": 0.383,
+      "end": 0.766
     },
     {
-      "word": "John",
-      "start": 0.624,
-      "end": 0.936
+      "word": "Thorfinn",
+      "start": 0.766,
+      "end": 1.149
     },
     {
-      "word": "Cena",
-      "start": 0.936,
-      "end": 1.248
+      "word": "without",
+      "start": 1.149,
+      "end": 1.532
     },
     {
-      "word": "could",
-      "start": 1.248,
-      "end": 1.56
+      "word": "Canute",
+      "start": 1.532,
+      "end": 1.915
     },
     {
-      "word": "take",
-      "start": 1.56,
-      "end": 1.872
+      "word": "is",
+      "start": 1.915,
+      "end": 2.298
     },
     {
-      "word": "out",
-      "start": 1.872,
-      "end": 2.184
-    },
-    {
-      "word": "One",
-      "start": 2.184,
-      "end": 2.496
-    },
-    {
-      "word": "Punch",
-      "start": 2.496,
-      "end": 2.808
-    },
-    {
-      "word": "Man's",
-      "start": 2.808,
-      "end": 3.12
-    },
-    {
-      "word": "Saitama",
-      "start": 3.12,
-      "end": 3.432
-    },
-    {
-      "word": "in",
-      "start": 3.432,
-      "end": 3.744
+      "word": "just",
+      "start": 2.298,
+      "end": 2.681
     },
     {
       "word": "a",
-      "start": 3.744,
-      "end": 4.056
+      "start": 2.681,
+      "end": 3.064
     },
     {
-      "word": "wrestling",
-      "start": 4.056,
-      "end": 4.368
+      "word": "lost",
+      "start": 3.064,
+      "end": 3.447
     },
     {
-      "word": "match!",
-      "start": 4.368,
-      "end": 4.68
+      "word": "Viking.",
+      "start": 3.447,
+      "end": 3.83
     }
   ]
 }

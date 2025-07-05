@@ -1,74 +1,69 @@
 {
   "words": [
     {
-      "word": "John",
+      "word": "Elizabeth's",
       "start": 0.0,
-      "end": 0.359
+      "end": 0.303
     },
     {
-      "word": "Cena,",
-      "start": 0.359,
-      "end": 0.717
+      "word": "love",
+      "start": 0.303,
+      "end": 0.606
     },
     {
-      "word": "as",
-      "start": 0.717,
-      "end": 1.076
+      "word": "for",
+      "start": 0.606,
+      "end": 0.909
+    },
+    {
+      "word": "Meliodas",
+      "start": 0.909,
+      "end": 1.212
+    },
+    {
+      "word": "is",
+      "start": 1.212,
+      "end": 1.515
+    },
+    {
+      "word": "stronger",
+      "start": 1.515,
+      "end": 1.818
+    },
+    {
+      "word": "than",
+      "start": 1.818,
+      "end": 2.122
+    },
+    {
+      "word": "his",
+      "start": 2.122,
+      "end": 2.425
+    },
+    {
+      "word": "love",
+      "start": 2.425,
+      "end": 2.728
+    },
+    {
+      "word": "for",
+      "start": 2.728,
+      "end": 3.031
     },
     {
       "word": "a",
-      "start": 1.076,
-      "end": 1.434
+      "start": 3.031,
+      "end": 3.334
     },
     {
-      "word": "Dragon",
-      "start": 1.434,
-      "end": 1.793
+      "word": "good",
+      "start": 3.334,
+      "end": 3.637
     },
     {
-      "word": "Ball",
-      "start": 1.793,
-      "end": 2.151
-    },
-    {
-      "word": "Z's",
-      "start": 2.151,
-      "end": 2.51
-    },
-    {
-      "word": "Fusion",
-      "start": 2.51,
-      "end": 2.869
-    },
-    {
-      "word": "Dance",
-      "start": 2.869,
-      "end": 3.227
-    },
-    {
-      "word": "partner,",
-      "start": 3.227,
-      "end": 3.586
-    },
-    {
-      "word": "could",
-      "start": 3.586,
-      "end": 3.944
-    },
-    {
-      "word": "rival",
-      "start": 3.944,
-      "end": 4.303
-    },
-    {
-      "word": "any",
-      "start": 4.303,
-      "end": 4.661
-    },
-    {
-      "word": "Saiyan!",
-      "start": 4.661,
-      "end": 5.02
+      "word": "pint.",
+      "start": 3.637,
+      "end": 3.94
     }
   ]
 }

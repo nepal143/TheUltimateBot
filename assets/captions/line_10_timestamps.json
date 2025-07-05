@@ -1,79 +1,59 @@
 {
   "words": [
     {
-      "word": "Agree",
+      "word": "HUNT",
       "start": 0.0,
-      "end": 0.324
+      "end": 0.348
     },
     {
-      "word": "or",
-      "start": 0.324,
-      "end": 0.648
+      "word": "starts",
+      "start": 0.348,
+      "end": 0.696
     },
     {
-      "word": "nah?",
-      "start": 0.648,
-      "end": 0.972
+      "word": "getting",
+      "start": 0.696,
+      "end": 1.045
     },
     {
-      "word": "John",
-      "start": 0.972,
-      "end": 1.296
+      "word": "interesting",
+      "start": 1.045,
+      "end": 1.393
     },
     {
-      "word": "Cena",
-      "start": 1.296,
-      "end": 1.62
+      "word": "when",
+      "start": 1.393,
+      "end": 1.741
     },
     {
-      "word": "could",
-      "start": 1.62,
-      "end": 1.944
+      "word": "they",
+      "start": 1.741,
+      "end": 2.089
     },
     {
-      "word": "give",
-      "start": 1.944,
-      "end": 2.268
+      "word": "face",
+      "start": 2.089,
+      "end": 2.437
     },
     {
-      "word": "Final",
-      "start": 2.268,
-      "end": 2.592
+      "word": "the",
+      "start": 2.437,
+      "end": 2.785
     },
     {
-      "word": "Fantasy's",
-      "start": 2.592,
-      "end": 2.916
+      "word": "Seven",
+      "start": 2.785,
+      "end": 3.134
     },
     {
-      "word": "Sephiroth",
-      "start": 2.916,
-      "end": 3.24
+      "word": "Deadly",
+      "start": 3.134,
+      "end": 3.482
     },
     {
-      "word": "a",
-      "start": 3.24,
-      "end": 3.564
-    },
-    {
-      "word": "run",
-      "start": 3.564,
-      "end": 3.888
-    },
-    {
-      "word": "for",
-      "start": 3.888,
-      "end": 4.212
-    },
-    {
-      "word": "his",
-      "start": 4.212,
-      "end": 4.536
-    },
-    {
-      "word": "money!",
-      "start": 4.536,
-      "end": 4.86
+      "word": "Sins!",
+      "start": 3.482,
+      "end": 3.83
     }
   ]
 }

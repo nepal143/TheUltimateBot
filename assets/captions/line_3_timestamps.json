@@ -3,52 +3,37 @@
     {
       "word": "What",
       "start": 0.0,
-      "end": 0.324
+      "end": 0.377
     },
     {
       "word": "if",
-      "start": 0.324,
-      "end": 0.648
+      "start": 0.377,
+      "end": 0.754
     },
     {
-      "word": "John",
-      "start": 0.648,
-      "end": 0.972
+      "word": "Merlin",
+      "start": 0.754,
+      "end": 1.131
     },
     {
-      "word": "Cena",
-      "start": 0.972,
-      "end": 1.296
-    },
-    {
-      "word": "learned",
-      "start": 1.296,
-      "end": 1.62
+      "word": "had",
+      "start": 1.131,
+      "end": 1.509
     },
     {
       "word": "the",
-      "start": 1.62,
-      "end": 1.944
+      "start": 1.509,
+      "end": 1.886
     },
     {
-      "word": "Dragon",
-      "start": 1.944,
-      "end": 2.268
+      "word": "Commandments",
+      "start": 1.886,
+      "end": 2.263
     },
     {
-      "word": "Ball",
-      "start": 2.268,
-      "end": 2.592
-    },
-    {
-      "word": "Z's",
-      "start": 2.592,
-      "end": 2.916
-    },
-    {
-      "word": "Kamehameha?",
-      "start": 2.916,
-      "end": 3.24
+      "word": "powers?!",
+      "start": 2.263,
+      "end": 2.64
     }
   ]
 }
