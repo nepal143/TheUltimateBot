@@ -1,74 +1,59 @@
 {
   "words": [
     {
-      "word": "If",
+      "word": "John",
       "start": 0.0,
-      "end": 0.397
+      "end": 0.345
     },
     {
-      "word": "Elon",
-      "start": 0.397,
-      "end": 0.794
+      "word": "Cena's",
+      "start": 0.345,
+      "end": 0.689
     },
     {
-      "word": "Musk",
-      "start": 0.794,
-      "end": 1.191
+      "word": "finishing",
+      "start": 0.689,
+      "end": 1.034
     },
     {
-      "word": "had",
-      "start": 1.191,
-      "end": 1.589
-    },
-    {
-      "word": "Dragon",
-      "start": 1.589,
-      "end": 1.986
-    },
-    {
-      "word": "Ball's",
-      "start": 1.986,
-      "end": 2.383
-    },
-    {
-      "word": "Kami",
-      "start": 2.383,
-      "end": 2.78
-    },
-    {
-      "word": "Shenron",
-      "start": 2.78,
-      "end": 3.177
-    },
-    {
-      "word": "wish,",
-      "start": 3.177,
-      "end": 3.574
-    },
-    {
-      "word": "space",
-      "start": 3.574,
-      "end": 3.971
-    },
-    {
-      "word": "colonization",
-      "start": 3.971,
-      "end": 4.369
+      "word": "move",
+      "start": 1.034,
+      "end": 1.378
     },
     {
       "word": "would",
-      "start": 4.369,
-      "end": 4.766
+      "start": 1.378,
+      "end": 1.723
     },
     {
-      "word": "take",
-      "start": 4.766,
-      "end": 5.163
+      "word": "be",
+      "start": 1.723,
+      "end": 2.067
     },
     {
-      "word": "minutes!",
-      "start": 5.163,
-      "end": 5.56
+      "word": "deadly",
+      "start": 2.067,
+      "end": 2.412
+    },
+    {
+      "word": "in",
+      "start": 2.412,
+      "end": 2.756
+    },
+    {
+      "word": "Street",
+      "start": 2.756,
+      "end": 3.101
+    },
+    {
+      "word": "Fighter",
+      "start": 3.101,
+      "end": 3.445
+    },
+    {
+      "word": "tournaments!",
+      "start": 3.445,
+      "end": 3.79
     }
   ]
 }

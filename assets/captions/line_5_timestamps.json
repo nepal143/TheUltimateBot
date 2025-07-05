@@ -1,64 +1,74 @@
 {
   "words": [
     {
-      "word": "Elon",
+      "word": "John",
       "start": 0.0,
-      "end": 0.413
+      "end": 0.359
     },
     {
-      "word": "Musk",
-      "start": 0.413,
-      "end": 0.827
+      "word": "Cena,",
+      "start": 0.359,
+      "end": 0.717
     },
     {
-      "word": "needs",
-      "start": 0.827,
-      "end": 1.24
+      "word": "as",
+      "start": 0.717,
+      "end": 1.076
     },
     {
-      "word": "Neon",
-      "start": 1.24,
-      "end": 1.653
+      "word": "a",
+      "start": 1.076,
+      "end": 1.434
     },
     {
-      "word": "Genesis",
-      "start": 1.653,
-      "end": 2.067
+      "word": "Dragon",
+      "start": 1.434,
+      "end": 1.793
     },
     {
-      "word": "Evangelion's",
-      "start": 2.067,
-      "end": 2.48
+      "word": "Ball",
+      "start": 1.793,
+      "end": 2.151
     },
     {
-      "word": "Evangelion",
-      "start": 2.48,
-      "end": 2.893
+      "word": "Z's",
+      "start": 2.151,
+      "end": 2.51
     },
     {
-      "word": "Units",
-      "start": 2.893,
-      "end": 3.307
+      "word": "Fusion",
+      "start": 2.51,
+      "end": 2.869
     },
     {
-      "word": "to",
-      "start": 3.307,
-      "end": 3.72
+      "word": "Dance",
+      "start": 2.869,
+      "end": 3.227
     },
     {
-      "word": "tackle",
-      "start": 3.72,
-      "end": 4.133
+      "word": "partner,",
+      "start": 3.227,
+      "end": 3.586
     },
     {
-      "word": "climate",
-      "start": 4.133,
-      "end": 4.547
+      "word": "could",
+      "start": 3.586,
+      "end": 3.944
     },
     {
-      "word": "change.",
-      "start": 4.547,
-      "end": 4.96
+      "word": "rival",
+      "start": 3.944,
+      "end": 4.303
+    },
+    {
+      "word": "any",
+      "start": 4.303,
+      "end": 4.661
+    },
+    {
+      "word": "Saiyan!",
+      "start": 4.661,
+      "end": 5.02
     }
   ]
 }

@@ -6,30 +6,31 @@ from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 
 SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
-
 def get_authenticated_service():
     creds = None
     token_path = "token.json"
 
-    # ✅ Check for existing token
+    # 💥 Check if token exists AND is valid JSON
     if os.path.exists(token_path):
-        print("🔑 Loading existing token...")
-        creds = Credentials.from_authorized_user_file(token_path, SCOPES)
+        try:
+            with open(token_path, "r") as f:
+                if f.read().strip() == "":
+                    raise ValueError("Token file is empty.")
+            creds = Credentials.from_authorized_user_file(token_path, SCOPES)
+            print("🔑 Loaded existing token.")
+        except Exception as e:
+            print(f"⚠️ Invalid token.json: {e}. Re-authenticating...")
+            creds = None
 
-    # 🧼 If token missing or invalid, login again
+    # 🔁 If no valid creds, run browser login
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
-            print("🔄 Refreshing expired token...")
             creds.refresh(Request())
         else:
-            print("🔐 No valid token found. Starting login flow...")
             flow = InstalledAppFlow.from_client_secrets_file("client_secret.json", SCOPES)
             creds = flow.run_local_server(port=0)
-
-        # 💾 Save new token
-        with open(token_path, "w") as token_file:
-            token_file.write(creds.to_json())
-            print("✅ Token saved for future use!")
+        with open(token_path, "w") as token:
+            token.write(creds.to_json())
 
     return build("youtube", "v3", credentials=creds)
 

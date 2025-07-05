@@ -3,62 +3,52 @@
     {
       "word": "What",
       "start": 0.0,
-      "end": 0.429
+      "end": 0.324
     },
     {
       "word": "if",
-      "start": 0.429,
-      "end": 0.858
+      "start": 0.324,
+      "end": 0.648
     },
     {
-      "word": "Elon",
-      "start": 0.858,
-      "end": 1.288
+      "word": "John",
+      "start": 0.648,
+      "end": 0.972
     },
     {
-      "word": "Musk",
-      "start": 1.288,
-      "end": 1.717
+      "word": "Cena",
+      "start": 0.972,
+      "end": 1.296
     },
     {
-      "word": "had",
-      "start": 1.717,
-      "end": 2.146
+      "word": "learned",
+      "start": 1.296,
+      "end": 1.62
     },
     {
-      "word": "Goku's",
-      "start": 2.146,
-      "end": 2.575
+      "word": "the",
+      "start": 1.62,
+      "end": 1.944
     },
     {
-      "word": "Saiyan",
-      "start": 2.575,
-      "end": 3.004
+      "word": "Dragon",
+      "start": 1.944,
+      "end": 2.268
     },
     {
-      "word": "power?",
-      "start": 3.004,
-      "end": 3.433
+      "word": "Ball",
+      "start": 2.268,
+      "end": 2.592
     },
     {
-      "word": "Hyperdrive",
-      "start": 3.433,
-      "end": 3.863
+      "word": "Z's",
+      "start": 2.592,
+      "end": 2.916
     },
     {
-      "word": "SpaceX",
-      "start": 3.863,
-      "end": 4.292
-    },
-    {
-      "word": "missions",
-      "start": 4.292,
-      "end": 4.721
-    },
-    {
-      "word": "FTW!",
-      "start": 4.721,
-      "end": 5.15
+      "word": "Kamehameha?",
+      "start": 2.916,
+      "end": 3.24
     }
   ]
 }
