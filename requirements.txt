@@ -1,9 +1,21 @@
+# Core
 python-dotenv==1.0.1
 openai==0.28.1
 requests==2.31.0
+
+# Video & Audio
 moviepy==1.0.3
 pyttsx3==2.90
 Pillow==9.5.0
 imageio==2.31.1
 imageio-ffmpeg==0.4.9
 tqdm==4.66.2
+numpy==1.24.4  # Needed for ImageClip-based caption generation
+
+# Google API for YouTube upload
+google-api-python-client==2.123.0
+google-auth==2.29.0
+google-auth-oauthlib==1.2.0
+
+# ElevenLabs TTS
+elevenlabs==0.2.26

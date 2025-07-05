@@ -1,104 +1,74 @@
 {
   "words": [
     {
-      "word": "They",
+      "word": "Elon",
       "start": 0.0,
-      "end": 0.301
+      "end": 0.397
     },
     {
-      "word": "say",
-      "start": 0.301,
-      "end": 0.603
+      "word": "Musk",
+      "start": 0.397,
+      "end": 0.794
     },
     {
-      "word": "Spiderman",
-      "start": 0.603,
-      "end": 0.904
+      "word": "jumping",
+      "start": 0.794,
+      "end": 1.191
     },
     {
-      "word": "can't",
-      "start": 0.904,
-      "end": 1.206
+      "word": "over",
+      "start": 1.191,
+      "end": 1.589
     },
     {
-      "word": "hold",
-      "start": 1.206,
-      "end": 1.507
+      "word": "cars",
+      "start": 1.589,
+      "end": 1.986
     },
     {
-      "word": "his",
-      "start": 1.507,
-      "end": 1.809
+      "word": "like",
+      "start": 1.986,
+      "end": 2.383
     },
     {
-      "word": "own",
-      "start": 1.809,
-      "end": 2.111
+      "word": "One",
+      "start": 2.383,
+      "end": 2.78
     },
     {
-      "word": "against",
-      "start": 2.111,
-      "end": 2.412
+      "word": "Punch",
+      "start": 2.78,
+      "end": 3.177
     },
     {
-      "word": "Venom.",
-      "start": 2.412,
-      "end": 2.713
+      "word": "Man?",
+      "start": 3.177,
+      "end": 3.574
     },
     {
-      "word": "But",
-      "start": 2.713,
-      "end": 3.015
+      "word": "SpaceX",
+      "start": 3.574,
+      "end": 3.971
     },
     {
-      "word": "I",
-      "start": 3.015,
-      "end": 3.316
+      "word": "contractors",
+      "start": 3.971,
+      "end": 4.369
     },
     {
-      "word": "ask",
-      "start": 3.317,
-      "end": 3.618
+      "word": "better",
+      "start": 4.369,
+      "end": 4.766
     },
     {
-      "word": "you,",
-      "start": 3.618,
-      "end": 3.919
+      "word": "watch",
+      "start": 4.766,
+      "end": 5.163
     },
     {
-      "word": "can",
-      "start": 3.919,
-      "end": 4.221
-    },
-    {
-      "word": "Eddie",
-      "start": 4.221,
-      "end": 4.522
-    },
-    {
-      "word": "Brock",
-      "start": 4.522,
-      "end": 4.824
-    },
-    {
-      "word": "control",
-      "start": 4.824,
-      "end": 5.125
-    },
-    {
-      "word": "his",
-      "start": 5.125,
-      "end": 5.427
-    },
-    {
-      "word": "own",
-      "start": 5.427,
-      "end": 5.728
-    },
-    {
-      "word": "symbiote?",
-      "start": 5.728,
-      "end": 6.03
+      "word": "out!",
+      "start": 5.163,
+      "end": 5.56
     }
   ]
 }

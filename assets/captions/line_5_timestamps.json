@@ -1,74 +1,64 @@
 {
   "words": [
     {
-      "word": "Black",
+      "word": "Elon",
       "start": 0.0,
-      "end": 0.299
+      "end": 0.413
     },
     {
-      "word": "Widow's",
-      "start": 0.299,
-      "end": 0.597
+      "word": "Musk",
+      "start": 0.413,
+      "end": 0.827
     },
     {
-      "word": "red",
-      "start": 0.597,
-      "end": 0.896
+      "word": "needs",
+      "start": 0.827,
+      "end": 1.24
     },
     {
-      "word": "room",
-      "start": 0.896,
-      "end": 1.194
+      "word": "Neon",
+      "start": 1.24,
+      "end": 1.653
     },
     {
-      "word": "training",
-      "start": 1.194,
-      "end": 1.493
+      "word": "Genesis",
+      "start": 1.653,
+      "end": 2.067
     },
     {
-      "word": "makes",
-      "start": 1.493,
-      "end": 1.791
+      "word": "Evangelion's",
+      "start": 2.067,
+      "end": 2.48
     },
     {
-      "word": "Elektra's",
-      "start": 1.791,
-      "end": 2.09
+      "word": "Evangelion",
+      "start": 2.48,
+      "end": 2.893
     },
     {
-      "word": "look",
-      "start": 2.09,
-      "end": 2.389
+      "word": "Units",
+      "start": 2.893,
+      "end": 3.307
     },
     {
-      "word": "like",
-      "start": 2.389,
-      "end": 2.687
+      "word": "to",
+      "start": 3.307,
+      "end": 3.72
     },
     {
-      "word": "a",
-      "start": 2.687,
-      "end": 2.986
+      "word": "tackle",
+      "start": 3.72,
+      "end": 4.133
     },
     {
-      "word": "walk",
-      "start": 2.986,
-      "end": 3.284
+      "word": "climate",
+      "start": 4.133,
+      "end": 4.547
     },
     {
-      "word": "in",
-      "start": 3.284,
-      "end": 3.583
-    },
-    {
-      "word": "the",
-      "start": 3.583,
-      "end": 3.881
-    },
-    {
-      "word": "park.",
-      "start": 3.881,
-      "end": 4.18
+      "word": "change.",
+      "start": 4.547,
+      "end": 4.96
     }
   ]
 }

@@ -19,7 +19,7 @@ from moviepy.editor import (
 )
 from moviepy.video.fx.all import resize, crop
 
-from pixabay_utils import search_pixabay_videos, download_video
+from pixabay_utils import search_giphy_videos, download_video
 
 from word_timestamp_generator import generate_fake_word_timestamps
 
@@ -39,7 +39,7 @@ def generate_video(
         keyword = item["keyword"]
         print(f"🔍 Sentence {idx + 1}: '{sentence.strip()}' ➞ Keyword: '{keyword}'")
 
-        video_urls = search_pixabay_videos(keyword, count=5)
+        video_urls = search_giphy_videos(keyword, count=5)
         if not video_urls:
             print(f"⚠️ No videos found for: {keyword}")
             continue
