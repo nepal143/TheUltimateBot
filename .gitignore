@@ -18,3 +18,5 @@ assets/video
 /Lib
 /Scripts
 .cfg
+client_secret.json
+token.json

@@ -3,82 +3,67 @@
     {
       "word": "What",
       "start": 0.0,
-      "end": 0.392
+      "end": 0.378
     },
     {
       "word": "if",
-      "start": 0.392,
-      "end": 0.784
+      "start": 0.378,
+      "end": 0.755
     },
     {
-      "word": "Ant-Man",
-      "start": 0.784,
-      "end": 1.176
+      "word": "Elon",
+      "start": 0.755,
+      "end": 1.133
     },
     {
-      "word": "used",
-      "start": 1.176,
-      "end": 1.567
+      "word": "Musk",
+      "start": 1.133,
+      "end": 1.511
     },
     {
-      "word": "size-altering",
-      "start": 1.567,
-      "end": 1.959
+      "word": "inherited",
+      "start": 1.511,
+      "end": 1.888
     },
     {
-      "word": "tech",
-      "start": 1.959,
-      "end": 2.351
+      "word": "Naruto's",
+      "start": 1.888,
+      "end": 2.266
     },
     {
-      "word": "on",
-      "start": 2.351,
-      "end": 2.743
+      "word": "Kurama",
+      "start": 2.266,
+      "end": 2.644
     },
     {
-      "word": "Stark",
-      "start": 2.743,
-      "end": 3.135
+      "word": "power?",
+      "start": 2.644,
+      "end": 3.022
     },
     {
-      "word": "Tower?",
-      "start": 3.135,
-      "end": 3.527
+      "word": "Colonization",
+      "start": 3.022,
+      "end": 3.399
     },
     {
-      "word": "A",
-      "start": 3.527,
-      "end": 3.919
+      "word": "just",
+      "start": 3.399,
+      "end": 3.777
     },
     {
-      "word": "mini-army",
-      "start": 3.919,
-      "end": 4.311
+      "word": "got",
+      "start": 3.777,
+      "end": 4.155
     },
     {
-      "word": "could",
-      "start": 4.311,
-      "end": 4.702
+      "word": "ninja",
+      "start": 4.155,
+      "end": 4.532
     },
     {
-      "word": "take",
-      "start": 4.702,
-      "end": 5.094
-    },
-    {
-      "word": "him",
-      "start": 5.094,
-      "end": 5.486
-    },
-    {
-      "word": "down",
-      "start": 5.486,
-      "end": 5.878
-    },
-    {
-      "word": "easily!",
-      "start": 5.878,
-      "end": 6.27
+      "word": "quick!",
+      "start": 4.532,
+      "end": 4.91
     }
   ]
 }

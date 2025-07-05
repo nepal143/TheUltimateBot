@@ -3,82 +3,82 @@
     {
       "word": "Let's",
       "start": 0.0,
-      "end": 0.351
+      "end": 0.315
     },
     {
       "word": "be",
-      "start": 0.351,
-      "end": 0.703
+      "start": 0.315,
+      "end": 0.63
     },
     {
       "word": "real...",
-      "start": 0.703,
-      "end": 1.054
+      "start": 0.63,
+      "end": 0.945
     },
     {
-      "word": "Captain",
-      "start": 1.054,
-      "end": 1.405
+      "word": "If",
+      "start": 0.945,
+      "end": 1.26
     },
     {
-      "word": "America's",
-      "start": 1.405,
-      "end": 1.756
+      "word": "Elon",
+      "start": 1.26,
+      "end": 1.575
     },
     {
-      "word": "shield",
-      "start": 1.756,
-      "end": 2.107
+      "word": "Musk",
+      "start": 1.575,
+      "end": 1.89
     },
     {
-      "word": "shouldn't",
-      "start": 2.107,
-      "end": 2.459
+      "word": "had",
+      "start": 1.89,
+      "end": 2.205
     },
     {
-      "word": "be",
-      "start": 2.459,
-      "end": 2.81
+      "word": "a",
+      "start": 2.205,
+      "end": 2.52
     },
     {
-      "word": "his",
-      "start": 2.81,
-      "end": 3.161
+      "word": "Demon",
+      "start": 2.52,
+      "end": 2.835
     },
     {
-      "word": "signature",
-      "start": 3.161,
-      "end": 3.512
+      "word": "Slayer",
+      "start": 2.835,
+      "end": 3.15
     },
     {
-      "word": "weapon.",
-      "start": 3.513,
-      "end": 3.864
+      "word": "mark,",
+      "start": 3.15,
+      "end": 3.465
     },
     {
-      "word": "Bring",
-      "start": 3.864,
-      "end": 4.215
+      "word": "he'd",
+      "start": 3.465,
+      "end": 3.78
     },
     {
-      "word": "on",
-      "start": 4.215,
-      "end": 4.566
+      "word": "slay",
+      "start": 3.78,
+      "end": 4.095
     },
     {
-      "word": "the",
-      "start": 4.566,
-      "end": 4.918
+      "word": "bureaucracy",
+      "start": 4.095,
+      "end": 4.41
     },
     {
-      "word": "vibranium",
-      "start": 4.918,
-      "end": 5.269
+      "word": "in",
+      "start": 4.41,
+      "end": 4.725
     },
     {
-      "word": "claws!",
-      "start": 5.269,
-      "end": 5.62
+      "word": "minutes.",
+      "start": 4.725,
+      "end": 5.04
     }
   ]
 }

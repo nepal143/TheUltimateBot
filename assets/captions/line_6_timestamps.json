@@ -1,79 +1,64 @@
 {
   "words": [
     {
-      "word": "Phoenix",
+      "word": "With",
       "start": 0.0,
-      "end": 0.395
+      "end": 0.403
     },
     {
-      "word": "Force",
-      "start": 0.395,
-      "end": 0.791
+      "word": "Mob",
+      "start": 0.403,
+      "end": 0.805
     },
     {
-      "word": "Jean",
-      "start": 0.791,
-      "end": 1.186
+      "word": "Psycho",
+      "start": 0.805,
+      "end": 1.208
     },
     {
-      "word": "is",
-      "start": 1.186,
-      "end": 1.581
+      "word": "100's",
+      "start": 1.208,
+      "end": 1.61
     },
     {
-      "word": "a",
-      "start": 1.581,
-      "end": 1.977
+      "word": "psychic",
+      "start": 1.61,
+      "end": 2.013
     },
     {
-      "word": "goddess",
-      "start": 1.977,
-      "end": 2.372
+      "word": "powers,",
+      "start": 2.013,
+      "end": 2.415
     },
     {
-      "word": "among",
-      "start": 2.372,
-      "end": 2.767
+      "word": "Elon",
+      "start": 2.415,
+      "end": 2.817
     },
     {
-      "word": "mortals.",
-      "start": 2.767,
-      "end": 3.163
+      "word": "could",
+      "start": 2.818,
+      "end": 3.22
     },
     {
-      "word": "Could",
-      "start": 3.163,
-      "end": 3.558
+      "word": "make",
+      "start": 3.22,
+      "end": 3.623
     },
     {
-      "word": "she",
-      "start": 3.558,
-      "end": 3.953
+      "word": "Tesla",
+      "start": 3.623,
+      "end": 4.025
     },
     {
-      "word": "overpower",
-      "start": 3.953,
-      "end": 4.349
+      "word": "cars",
+      "start": 4.025,
+      "end": 4.428
     },
     {
-      "word": "Scarlet",
-      "start": 4.349,
-      "end": 4.744
-    },
-    {
-      "word": "Witch's",
-      "start": 4.744,
-      "end": 5.139
-    },
-    {
-      "word": "chaos",
-      "start": 5.139,
-      "end": 5.535
-    },
-    {
-      "word": "magic?",
-      "start": 5.535,
-      "end": 5.93
+      "word": "immortal!",
+      "start": 4.428,
+      "end": 4.83
     }
   ]
 }

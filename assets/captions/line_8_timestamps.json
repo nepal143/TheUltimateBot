@@ -1,69 +1,74 @@
 {
   "words": [
     {
-      "word": "Ms.",
+      "word": "If",
       "start": 0.0,
-      "end": 0.314
+      "end": 0.397
     },
     {
-      "word": "Marvel",
-      "start": 0.314,
-      "end": 0.628
+      "word": "Elon",
+      "start": 0.397,
+      "end": 0.794
     },
     {
-      "word": "vs",
-      "start": 0.628,
-      "end": 0.942
+      "word": "Musk",
+      "start": 0.794,
+      "end": 1.191
     },
     {
-      "word": "She-Hulk:",
-      "start": 0.942,
-      "end": 1.255
+      "word": "had",
+      "start": 1.191,
+      "end": 1.589
     },
     {
-      "word": "Who'd",
-      "start": 1.255,
-      "end": 1.569
+      "word": "Dragon",
+      "start": 1.589,
+      "end": 1.986
     },
     {
-      "word": "come",
-      "start": 1.569,
-      "end": 1.883
+      "word": "Ball's",
+      "start": 1.986,
+      "end": 2.383
     },
     {
-      "word": "out",
-      "start": 1.883,
-      "end": 2.197
+      "word": "Kami",
+      "start": 2.383,
+      "end": 2.78
     },
     {
-      "word": "on",
-      "start": 2.197,
-      "end": 2.511
+      "word": "Shenron",
+      "start": 2.78,
+      "end": 3.177
     },
     {
-      "word": "top",
-      "start": 2.511,
-      "end": 2.825
+      "word": "wish,",
+      "start": 3.177,
+      "end": 3.574
     },
     {
-      "word": "in",
-      "start": 2.825,
-      "end": 3.138
+      "word": "space",
+      "start": 3.574,
+      "end": 3.971
     },
     {
-      "word": "a",
-      "start": 3.138,
-      "end": 3.452
+      "word": "colonization",
+      "start": 3.971,
+      "end": 4.369
     },
     {
-      "word": "street",
-      "start": 3.452,
-      "end": 3.766
+      "word": "would",
+      "start": 4.369,
+      "end": 4.766
     },
     {
-      "word": "fight?",
-      "start": 3.766,
-      "end": 4.08
+      "word": "take",
+      "start": 4.766,
+      "end": 5.163
+    },
+    {
+      "word": "minutes!",
+      "start": 5.163,
+      "end": 5.56
     }
   ]
 }

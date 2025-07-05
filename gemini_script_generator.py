@@ -1,6 +1,7 @@
 import os
 import openai
 import json
+import re
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -11,32 +12,30 @@ def generate_youtube_script(topic):
     prompt = (
         f"Generate a controversial YouTube Shorts script for the anime/game/series topic: '{topic}'.\n\n"
         "Script Format:\n"
-        "- Write 15 to 25 lines (1 punchy sentence each, max 25 words)\n"
-        "- Only use the famous and well-known characters from the anime/game/series\n"
-        "- Each line must be a bold take, hot opinion, or debate-worthy questio and each line must have relation with the topic \n"
-        "- Use phrasing like: 'Hot take:', 'Let’s be real...', 'What if...', 'Imagine if...'\n"
-        "- Focus on characters, power scaling, alternate outcomes, betrayals, abilities, etc.\n"
-        "- End with a line that invites comment (e.g., 'Agree or nah?', 'Drop your take.')\n"
-        "- ✳️ Keep it **simple and easy to understand** — avoid overcomplicating things or using hard-to-follow logic\n\n"
-        "Return this format:\n"
+        "- Write 10 to 15 lines (1 punchy sentence each, max 25 words)\n"
+        "- Only use famous and well-known characters from the anime/game/series\n"
+        "- Each line must be a bold take or hot opinion directly tied to the topic\n"
+        "- Use phrases like: 'Hot take:', 'Let’s be real...', 'What if...', 'Imagine if...'\n"
+        "- End with a line that invites comments (e.g., 'Agree or nah?', 'Drop your take.')\n"
+        "- ✳️ Keep it simple and debate-worthy\n\n"
+        "Return JSON in this format:\n"
         "{\n"
         "  \"script\": [\n"
-        "    {\"sentence\": \"<your line>\", \"keyword\": \"<anime-specific term with 2–4 words>\"},\n"
+        "    {\"sentence\": \"<your line>\", \"keyword\": \"<anime-specific term with max 3 words>\"},\n"
         "    ...\n"
         "  ],\n"
-        "  \"mood\": \"<one-word music mood like 'epic', 'lofi', 'tense'>\"\n"
+        "  \"mood\": \"<one-word music mood>\",\n"
+        "  \"title\": \"<video title>\",\n"
+        "  \"description\": \"<YouTube video description>\",\n"
+        "  \"tags\": [\"<tag1>\", \"<tag2>\", ...]\n"
         "}\n\n"
         "⚠️ Keyword Rules:\n"
-        "- Keywords will be used to search **Giphy** for anime GIFs\n"
-        "- Must contain ONLY terms/names from the same anime/game try using mostly names only every single keyword muset have first word reference with the series or anime  \n"
-        "- Don't use the character's name which are not famous instead use the character's name which are famous and well known in the anime or series and also you can just search on the name of the name of the series/anime/game\n"
-        "- Use official names of characters, powers, forms, items — like 'Gojo Six Eyes', 'Luffy Gear Fifth'\n"
-        "- No vague emotions, story descriptions, or general terms\n"
-        "- Keep each keyword 2 to 4 words max\n"
-        "- Each keyword must be unique\n"
-        "- Avoid using generic terms like 'anime', 'fight', 'power' — focus on specific characters or abilities\n"
-        "✅ Valid examples: 'Gojo Six Eyes', 'Eren Founding Titan', 'Luffy Gear Fifth', 'Jin-Woo Shadow Monarch'\n\n"
-        "Respond ONLY with the raw JSON object. No explanations or markdown formatting."
+        "- Must be max 3 words\n"
+        "- Use only official names/powers/forms/items from the anime/game\n"
+        "- No vague, emotional, or generic terms\n"
+        "- Every keyword must start with a reference to the anime or game\n"
+        "✅ Examples: 'Gojo Six Eyes', 'Luffy Gear Fifth', 'Eren Founding Titan'\n"
+        "Return raw JSON. No explanation."
     )
 
     try:
@@ -48,13 +47,28 @@ def generate_youtube_script(topic):
             ],
             temperature=0.95,
         )
+
         raw = response['choices'][0]['message']['content'].strip()
+        print("🪵 RAW RESPONSE:\n", raw)
+
+        # 🧼 Extract first full JSON block
+        match = re.search(r"\{[\s\S]+\}", raw)
+        if not match:
+            print("⚠️ No valid JSON object found in response.")
+            return None
+
+        cleaned_json = match.group(0)
+
+        # 🧽 Fix common formatting issues:
+        cleaned_json = re.sub(r",\s*([}\]])", r"\1", cleaned_json)  # Remove trailing commas
+        cleaned_json = cleaned_json.replace("“", "\"").replace("”", "\"")  # Curly quotes to straight
+        cleaned_json = cleaned_json.replace("‘", "'").replace("’", "'")    # Curly apostrophes to straight
 
         os.makedirs("assets/scripts", exist_ok=True)
         with open("assets/scripts/latest_script.json", "w", encoding="utf-8") as f:
-            f.write(raw)
+            f.write(cleaned_json)
 
-        return json.loads(raw)
+        return json.loads(cleaned_json)
 
     except Exception as e:
         print("🚨 OpenRouter Error:", e)
